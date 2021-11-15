@@ -18,7 +18,7 @@ struct TasksView: View {
                             Text(task.name)
                         }
                     }
-                    .navigationTitle("Friends")
+                    .navigationTitle("Tasks")
         }
     }
 }

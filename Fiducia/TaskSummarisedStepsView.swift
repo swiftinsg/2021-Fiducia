@@ -17,7 +17,7 @@ struct TaskSummarisedStepsView: View {
                 Text(self.task.steps[index])
             }
         }
-                    .navigationTitle(task.name)
+                    .navigationBarTitleDisplayMode(.inline)
     }
 }
 

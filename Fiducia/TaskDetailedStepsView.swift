@@ -13,22 +13,16 @@ struct TaskDetailedStepsView: View {
     
     
     var body: some View {
-        HStack {
-            Button {
-                print("Button pressed")
-            } label: {
+        NavigationView {
+            NavigationLink(destination: TaskSummarisedStepsView(task: task)) {
                 Image(systemName: "list.bullet.rectangle")
-                    .padding(20)
-        }
-        }
-        ForEach(1..<task.steps.count, id: \.self) { index in
-            HStack {
-                Text(self.task.steps[index])
             }
+            .buttonStyle(PlainButtonStyle())
+        .navigationTitle(task.name)
         }
-                    .navigationTitle(task.name)
     }
 }
+
 
 struct TaskDetailedStepsView_Previews: PreviewProvider {
     static var previews: some View {
