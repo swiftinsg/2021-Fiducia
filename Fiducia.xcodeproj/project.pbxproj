@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2EA0B00027420D5E0026B8D3 /* FiduciaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0AFFF27420D5E0026B8D3 /* FiduciaApp.swift */; };
+		2EA0B00227420D5E0026B8D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B00127420D5E0026B8D3 /* ContentView.swift */; };
+		2EA0B00427420D610026B8D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA0B00327420D610026B8D3 /* Assets.xcassets */; };
+		2EA0B00727420D610026B8D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA0B00627420D610026B8D3 /* Preview Assets.xcassets */; };
+		2EA0B01127420D610026B8D3 /* FiduciaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B01027420D610026B8D3 /* FiduciaTests.swift */; };
+		2EA0B01B27420D620026B8D3 /* FiduciaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B01A27420D620026B8D3 /* FiduciaUITests.swift */; };
+		2EA0B01D27420D620026B8D3 /* FiduciaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B01C27420D620026B8D3 /* FiduciaUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2EA0B00D27420D610026B8D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EA0AFF427420D5E0026B8D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EA0AFFB27420D5E0026B8D3;
+			remoteInfo = Fiducia;
+		};
+		2EA0B01727420D620026B8D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EA0AFF427420D5E0026B8D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EA0AFFB27420D5E0026B8D3;
+			remoteInfo = Fiducia;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2EA0AFFC27420D5E0026B8D3 /* Fiducia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fiducia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EA0AFFF27420D5E0026B8D3 /* FiduciaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiduciaApp.swift; sourceTree = "<group>"; };
+		2EA0B00127420D5E0026B8D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2EA0B00327420D610026B8D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2EA0B00627420D610026B8D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2EA0B00C27420D610026B8D3 /* FiduciaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiduciaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EA0B01027420D610026B8D3 /* FiduciaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiduciaTests.swift; sourceTree = "<group>"; };
+		2EA0B01627420D620026B8D3 /* FiduciaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiduciaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EA0B01A27420D620026B8D3 /* FiduciaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiduciaUITests.swift; sourceTree = "<group>"; };
+		2EA0B01C27420D620026B8D3 /* FiduciaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiduciaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2EA0AFF927420D5E0026B8D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA0B00927420D610026B8D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA0B01327420D620026B8D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2EA0AFF327420D5E0026B8D3 = {
+			isa = PBXGroup;
+			children = (
+				2EA0AFFE27420D5E0026B8D3 /* Fiducia */,
+				2EA0B00F27420D610026B8D3 /* FiduciaTests */,
+				2EA0B01927420D620026B8D3 /* FiduciaUITests */,
+				2EA0AFFD27420D5E0026B8D3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2EA0AFFD27420D5E0026B8D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2EA0AFFC27420D5E0026B8D3 /* Fiducia.app */,
+				2EA0B00C27420D610026B8D3 /* FiduciaTests.xctest */,
+				2EA0B01627420D620026B8D3 /* FiduciaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2EA0AFFE27420D5E0026B8D3 /* Fiducia */ = {
+			isa = PBXGroup;
+			children = (
+				2EA0AFFF27420D5E0026B8D3 /* FiduciaApp.swift */,
+				2EA0B00127420D5E0026B8D3 /* ContentView.swift */,
+				2EA0B00327420D610026B8D3 /* Assets.xcassets */,
+				2EA0B00527420D610026B8D3 /* Preview Content */,
+			);
+			path = Fiducia;
+			sourceTree = "<group>";
+		};
+		2EA0B00527420D610026B8D3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2EA0B00627420D610026B8D3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2EA0B00F27420D610026B8D3 /* FiduciaTests */ = {
+			isa = PBXGroup;
+			children = (
+				2EA0B01027420D610026B8D3 /* FiduciaTests.swift */,
+			);
+			path = FiduciaTests;
+			sourceTree = "<group>";
+		};
+		2EA0B01927420D620026B8D3 /* FiduciaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2EA0B01A27420D620026B8D3 /* FiduciaUITests.swift */,
+				2EA0B01C27420D620026B8D3 /* FiduciaUITestsLaunchTests.swift */,
+			);
+			path = FiduciaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2EA0AFFB27420D5E0026B8D3 /* Fiducia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EA0B02027420D620026B8D3 /* Build configuration list for PBXNativeTarget "Fiducia" */;
+			buildPhases = (
+				2EA0AFF827420D5E0026B8D3 /* Sources */,
+				2EA0AFF927420D5E0026B8D3 /* Frameworks */,
+				2EA0AFFA27420D5E0026B8D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fiducia;
+			productName = Fiducia;
+			productReference = 2EA0AFFC27420D5E0026B8D3 /* Fiducia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2EA0B00B27420D610026B8D3 /* FiduciaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EA0B02327420D620026B8D3 /* Build configuration list for PBXNativeTarget "FiduciaTests" */;
+			buildPhases = (
+				2EA0B00827420D610026B8D3 /* Sources */,
+				2EA0B00927420D610026B8D3 /* Frameworks */,
+				2EA0B00A27420D610026B8D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EA0B00E27420D610026B8D3 /* PBXTargetDependency */,
+			);
+			name = FiduciaTests;
+			productName = FiduciaTests;
+			productReference = 2EA0B00C27420D610026B8D3 /* FiduciaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2EA0B01527420D620026B8D3 /* FiduciaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EA0B02627420D620026B8D3 /* Build configuration list for PBXNativeTarget "FiduciaUITests" */;
+			buildPhases = (
+				2EA0B01227420D620026B8D3 /* Sources */,
+				2EA0B01327420D620026B8D3 /* Frameworks */,
+				2EA0B01427420D620026B8D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EA0B01827420D620026B8D3 /* PBXTargetDependency */,
+			);
+			name = FiduciaUITests;
+			productName = FiduciaUITests;
+			productReference = 2EA0B01627420D620026B8D3 /* FiduciaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2EA0AFF427420D5E0026B8D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					2EA0AFFB27420D5E0026B8D3 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					2EA0B00B27420D610026B8D3 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 2EA0AFFB27420D5E0026B8D3;
+					};
+					2EA0B01527420D620026B8D3 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 2EA0AFFB27420D5E0026B8D3;
+					};
+				};
+			};
+			buildConfigurationList = 2EA0AFF727420D5E0026B8D3 /* Build configuration list for PBXProject "Fiducia" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2EA0AFF327420D5E0026B8D3;
+			productRefGroup = 2EA0AFFD27420D5E0026B8D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2EA0AFFB27420D5E0026B8D3 /* Fiducia */,
+				2EA0B00B27420D610026B8D3 /* FiduciaTests */,
+				2EA0B01527420D620026B8D3 /* FiduciaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EA0AFFA27420D5E0026B8D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA0B00727420D610026B8D3 /* Preview Assets.xcassets in Resources */,
+				2EA0B00427420D610026B8D3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA0B00A27420D610026B8D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA0B01427420D620026B8D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2EA0AFF827420D5E0026B8D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA0B00227420D5E0026B8D3 /* ContentView.swift in Sources */,
+				2EA0B00027420D5E0026B8D3 /* FiduciaApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA0B00827420D610026B8D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA0B01127420D610026B8D3 /* FiduciaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA0B01227420D620026B8D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA0B01D27420D620026B8D3 /* FiduciaUITestsLaunchTests.swift in Sources */,
+				2EA0B01B27420D620026B8D3 /* FiduciaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2EA0B00E27420D610026B8D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EA0AFFB27420D5E0026B8D3 /* Fiducia */;
+			targetProxy = 2EA0B00D27420D610026B8D3 /* PBXContainerItemProxy */;
+		};
+		2EA0B01827420D620026B8D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EA0AFFB27420D5E0026B8D3 /* Fiducia */;
+			targetProxy = 2EA0B01727420D620026B8D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2EA0B01E27420D620026B8D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2EA0B01F27420D620026B8D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2EA0B02127420D620026B8D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Fiducia/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.Fiducia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2EA0B02227420D620026B8D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Fiducia/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.Fiducia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2EA0B02427420D620026B8D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.FiduciaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fiducia.app/Fiducia";
+			};
+			name = Debug;
+		};
+		2EA0B02527420D620026B8D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.FiduciaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fiducia.app/Fiducia";
+			};
+			name = Release;
+		};
+		2EA0B02727420D620026B8D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.FiduciaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fiducia;
+			};
+			name = Debug;
+		};
+		2EA0B02827420D620026B8D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.FiduciaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fiducia;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2EA0AFF727420D5E0026B8D3 /* Build configuration list for PBXProject "Fiducia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EA0B01E27420D620026B8D3 /* Debug */,
+				2EA0B01F27420D620026B8D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EA0B02027420D620026B8D3 /* Build configuration list for PBXNativeTarget "Fiducia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EA0B02127420D620026B8D3 /* Debug */,
+				2EA0B02227420D620026B8D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EA0B02327420D620026B8D3 /* Build configuration list for PBXNativeTarget "FiduciaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EA0B02427420D620026B8D3 /* Debug */,
+				2EA0B02527420D620026B8D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EA0B02627420D620026B8D3 /* Build configuration list for PBXNativeTarget "FiduciaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EA0B02727420D620026B8D3 /* Debug */,
+				2EA0B02827420D620026B8D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2EA0AFF427420D5E0026B8D3 /* Project object */;
+}
