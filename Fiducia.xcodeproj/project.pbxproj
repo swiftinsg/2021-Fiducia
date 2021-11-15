@@ -14,6 +14,12 @@
 		2EA0B01127420D610026B8D3 /* FiduciaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B01027420D610026B8D3 /* FiduciaTests.swift */; };
 		2EA0B01B27420D620026B8D3 /* FiduciaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B01A27420D620026B8D3 /* FiduciaUITests.swift */; };
 		2EA0B01D27420D620026B8D3 /* FiduciaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B01C27420D620026B8D3 /* FiduciaUITestsLaunchTests.swift */; };
+		2EA0B02A2742120B0026B8D3 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B0292742120B0026B8D3 /* TasksView.swift */; };
+		2EA0B02C2742121B0026B8D3 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B02B2742121B0026B8D3 /* ProgressView.swift */; };
+		2EA0B02E2742124C0026B8D3 /* ReflectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B02D2742124C0026B8D3 /* ReflectionView.swift */; };
+		2EA0B030274214A20026B8D3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B02F274214A20026B8D3 /* Task.swift */; };
+		2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */; };
+		2EA0B03427422C630026B8D3 /* TaskSummarisedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		2EA0B01627420D620026B8D3 /* FiduciaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiduciaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EA0B01A27420D620026B8D3 /* FiduciaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiduciaUITests.swift; sourceTree = "<group>"; };
 		2EA0B01C27420D620026B8D3 /* FiduciaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiduciaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2EA0B0292742120B0026B8D3 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		2EA0B02B2742121B0026B8D3 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		2EA0B02D2742124C0026B8D3 /* ReflectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionView.swift; sourceTree = "<group>"; };
+		2EA0B02F274214A20026B8D3 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailedStepsView.swift; sourceTree = "<group>"; };
+		2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSummarisedStepsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,12 @@
 			children = (
 				2EA0AFFF27420D5E0026B8D3 /* FiduciaApp.swift */,
 				2EA0B00127420D5E0026B8D3 /* ContentView.swift */,
+				2EA0B02B2742121B0026B8D3 /* ProgressView.swift */,
+				2EA0B0292742120B0026B8D3 /* TasksView.swift */,
+				2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */,
+				2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */,
+				2EA0B02F274214A20026B8D3 /* Task.swift */,
+				2EA0B02D2742124C0026B8D3 /* ReflectionView.swift */,
 				2EA0B00327420D610026B8D3 /* Assets.xcassets */,
 				2EA0B00527420D610026B8D3 /* Preview Content */,
 			);
@@ -258,7 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EA0B00227420D5E0026B8D3 /* ContentView.swift in Sources */,
+				2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */,
+				2EA0B02E2742124C0026B8D3 /* ReflectionView.swift in Sources */,
+				2EA0B02C2742121B0026B8D3 /* ProgressView.swift in Sources */,
+				2EA0B02A2742120B0026B8D3 /* TasksView.swift in Sources */,
+				2EA0B030274214A20026B8D3 /* Task.swift in Sources */,
 				2EA0B00027420D5E0026B8D3 /* FiduciaApp.swift in Sources */,
+				2EA0B03427422C630026B8D3 /* TaskSummarisedStepsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
