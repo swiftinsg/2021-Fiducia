@@ -20,7 +20,6 @@
 		2EA0B030274214A20026B8D3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B02F274214A20026B8D3 /* Task.swift */; };
 		2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */; };
 		2EA0B03427422C630026B8D3 /* TaskSummarisedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */; };
-		2ECB486D2742632F0021649B /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB486C2742632F0021649B /* Steps.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +56,6 @@
 		2EA0B02F274214A20026B8D3 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailedStepsView.swift; sourceTree = "<group>"; };
 		2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSummarisedStepsView.swift; sourceTree = "<group>"; };
-		2ECB486C2742632F0021649B /* Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +112,6 @@
 				2EA0B0292742120B0026B8D3 /* TasksView.swift */,
 				2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */,
 				2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */,
-				2ECB486C2742632F0021649B /* Steps.swift */,
 				2EA0B02F274214A20026B8D3 /* Task.swift */,
 				2EA0B02D2742124C0026B8D3 /* ReflectionView.swift */,
 				2EA0B00327420D610026B8D3 /* Assets.xcassets */,
@@ -278,7 +275,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ECB486D2742632F0021649B /* Steps.swift in Sources */,
 				2EA0B00227420D5E0026B8D3 /* ContentView.swift in Sources */,
 				2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */,
 				2EA0B02E2742124C0026B8D3 /* ReflectionView.swift in Sources */,

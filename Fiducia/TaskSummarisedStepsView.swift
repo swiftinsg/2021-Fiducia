@@ -13,18 +13,47 @@ struct TaskSummarisedStepsView: View {
     
     @State var text = "Write down any tips"
     
+    @State var newStep: String = ""
+    
+    
     
     var body: some View {
-        List {
-            ForEach(1..<task.steps.count, id: \.self) { index in
-                Text(self.task.steps[index])
+        
+       List {
+            ForEach(1..<task.steps.count) { index in
+                Text("Step \(index)")
+                    .bold()
                     .padding()
-                    
+                TextEditor(text: $task.steps[index - 1])
             }
-        }
+       }
     }
 }
+/*@State var goalOutput: String = ""
+ @State var goalInput: String = ""
+ @State var goalTyping = false
+ TextField("", text: $goalInput, onEditingChanged: {
+     self.goalTyping = $0
+     
+ }, onCommit: {
+     self.goalOutput = self.goalInput
+     
+ })
+     .background(Color.blue.opacity(0.1))
+     .padding()
+ 
+            }
+            Button("+") {
+            }
+                    
+            Button("Save") {
+                task.steps.append(newStep)
+            }
+        }.navigationTitle(task.name)
+       }
+    }
 
+*/
 struct TaskSummarisedStepsView_Previews: PreviewProvider {
     static var previews: some View {
         TaskSummarisedStepsView(task: .constant(Task(name: "Make a call", difficulty: 1, steps: ["hi"])))
@@ -60,5 +89,4 @@ struct TaskSummarisedStepsView_Previews: PreviewProvider {
     static var previews: some View {
         TaskSummarisedStepsView(task: Task(name: "Make a call", difficulty: 1, steps: ["hi"]))
     }
-}
-*/
+} */

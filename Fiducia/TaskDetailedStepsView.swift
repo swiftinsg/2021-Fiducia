@@ -25,21 +25,29 @@ struct TaskDetailedStepsView: View {
             }
                              )
             )
-        if stepCount + 1 < task.steps.count {
+        
+        if stepCount + 1 <= task.steps.count {
+            Spacer()
             Text(task.steps[stepCount])
-            Button(action: {
-                stepCount += 1
-            }, label: {
-                Text("next")
-                
-            })
-        } else if stepCount + 1 == task.steps.count {
-            Text(task.steps[stepCount])
-            Button(action: {
-                stepCount += 1
-            }, label: {
-                Text("complete")
-            })
+                .padding()
+                .frame(maxHeight: .infinity)
+                .background(Color.blue.opacity(0.1))
+            Spacer()
+            if stepCount + 1 < task.steps.count {
+                Button(action: {
+                    stepCount += 1
+                }, label: {
+                    Text("next")
+                    
+                })
+            } else {
+                Button(action: {
+                    stepCount += 1
+                }, label: {
+                    Text("complete")
+                })
+        }
+        
         } else {
             Text("congrats")
             }
