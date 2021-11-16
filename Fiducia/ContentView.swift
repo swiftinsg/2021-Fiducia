@@ -16,7 +16,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Progress", systemImage: "chart.xyaxis.line")
                 }
-            TasksView(text: .constant(""))
+            TasksView()
                 .tabItem {
                     Label("Tasks", systemImage: "checklist")
                 }

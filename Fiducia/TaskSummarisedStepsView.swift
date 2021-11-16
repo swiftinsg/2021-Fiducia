@@ -29,18 +29,7 @@ struct TaskSummarisedStepsView: View {
        }
     }
 }
-/*@State var goalOutput: String = ""
- @State var goalInput: String = ""
- @State var goalTyping = false
- TextField("", text: $goalInput, onEditingChanged: {
-     self.goalTyping = $0
-     
- }, onCommit: {
-     self.goalOutput = self.goalInput
-     
- })
-     .background(Color.blue.opacity(0.1))
-     .padding()
+/*
  
             }
             Button("+") {
