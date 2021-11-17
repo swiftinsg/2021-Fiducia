@@ -25,13 +25,17 @@ struct TaskDetailedStepsView: View {
             }
                              )
             )
+        ProgressView(value: Double(stepCount), total: Double(task.steps.count))
+            .padding()
         
         if stepCount + 1 <= task.steps.count {
             Spacer()
             Text(task.steps[stepCount])
                 .padding()
-                .frame(maxHeight: .infinity)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.blue.opacity(0.1))
+                .font(.largeTitle)
+                .font(.system(size: 30.0))
             Spacer()
             if stepCount + 1 < task.steps.count {
                 Button(action: {
@@ -40,12 +44,14 @@ struct TaskDetailedStepsView: View {
                     Text("next")
                     
                 })
+                .padding()
             } else {
                 Button(action: {
                     stepCount += 1
                 }, label: {
                     Text("complete")
                 })
+                .padding()
         }
         
         } else {
