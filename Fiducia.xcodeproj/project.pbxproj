@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E07B81B2744D165004AA826 /* FeelingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E07B81A2744D165004AA826 /* FeelingsView.swift */; };
 		2EA0B00027420D5E0026B8D3 /* FiduciaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0AFFF27420D5E0026B8D3 /* FiduciaApp.swift */; };
 		2EA0B00227420D5E0026B8D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B00127420D5E0026B8D3 /* ContentView.swift */; };
 		2EA0B00427420D610026B8D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA0B00327420D610026B8D3 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E07B81A2744D165004AA826 /* FeelingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsView.swift; sourceTree = "<group>"; };
 		2EA0AFFC27420D5E0026B8D3 /* Fiducia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fiducia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EA0AFFF27420D5E0026B8D3 /* FiduciaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiduciaApp.swift; sourceTree = "<group>"; };
 		2EA0B00127420D5E0026B8D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */,
 				2EA0B02F274214A20026B8D3 /* Task.swift */,
 				2EA0B02D2742124C0026B8D3 /* ReflectionView.swift */,
+				2E07B81A2744D165004AA826 /* FeelingsView.swift */,
 				2EA0B00327420D610026B8D3 /* Assets.xcassets */,
 				2EA0B00527420D610026B8D3 /* Preview Content */,
 			);
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E07B81B2744D165004AA826 /* FeelingsView.swift in Sources */,
 				2EA0B00227420D5E0026B8D3 /* ContentView.swift in Sources */,
 				2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */,
 				2EA0B02E2742124C0026B8D3 /* ReflectionView.swift in Sources */,

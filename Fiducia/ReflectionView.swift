@@ -7,27 +7,6 @@
 
 import SwiftUI
 
-struct feelingButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(configuration.isPressed ? Color.blue.opacity(0.1) : Color.blue.opacity(0.2))
-            .foregroundColor(.white)
-            .clipShape(Circle())
-    }
-    
-}
-
-struct feelingButtonStylePressed: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(Color.blue.opacity(0.2))
-            .foregroundColor(.white)
-            .clipShape(Capsule())
-    }
-    
-}
 
 struct ReflectionView: View {
     init() {
@@ -36,7 +15,6 @@ struct ReflectionView: View {
     
     @State var goalInput: String = ""
     @State var journalInput: String = ""
-    @State var buttonPressed: Int = 0
     @State private var date = Date()
     @State private var pickerReset = UUID()
     
@@ -74,41 +52,8 @@ struct ReflectionView: View {
                         .frame(alignment: .leading)
                         .id(self.pickerReset)
                 
-                        HStack {
-                    
-                            Button("D:")
-                                {
-                                buttonPressed = 1
-                                    }
-                                  .rotationEffect(Angle(degrees: -90))
-                                   .buttonStyle(feelingButtonStyle())
-                            Button("):") {
-                                buttonPressed = 2
-                                    }
-                                    .rotationEffect(Angle(degrees: -90))
-                                    .buttonStyle(feelingButtonStyle())
-                            Button("/:") {
-                                 buttonPressed = 3
-                                
-                            }
-                            .rotationEffect(Angle(degrees: -90))
-                            .buttonStyle(feelingButtonStyle())
-                            Button(":)") {
-                                buttonPressed = 4
-                                
-                            }
-                            .rotationEffect(Angle(degrees: 90))
-                            .buttonStyle(feelingButtonStyle())
-                            Button(":D") {
-                                buttonPressed = 5
-                                
-                            }
-                            .rotationEffect(Angle(degrees: 90))
-                            .buttonStyle(feelingButtonStyle())
-            
-                        }
-                
-            
+                        
+                    FeelingsView()
                     
             
                     Text("Today's journal:")

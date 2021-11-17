@@ -80,7 +80,7 @@ struct TasksView: View {
                     }
                 )
                 
-            List (0..<tasks.count) { index in
+            List (0..<tasks.count - 1) { index in
                 ForEach(searchResult, id: \.self) { task in
                         let taskIndex = tasks.firstIndex(of: task)!
                         NavigationLink(destination:
