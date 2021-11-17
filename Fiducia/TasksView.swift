@@ -38,7 +38,7 @@ struct TasksView: View {
     var body: some View {
         NavigationView {
             VStack {
-               /* HStack {
+               HStack {
          
                     TextField("Search ...", text: $text)
                         .padding(7)
@@ -73,22 +73,36 @@ struct TasksView: View {
                             Button(action: {
                                 self.text = ""
                             }) {
+                                Image(systemName: "multiply.circle.fill")
+                                    .foregroundColor(.gray)
+                                    .padding(.trailing, 8)
                             }
                         }
                     }
-                )*/
+                )
                 
             List (0..<tasks.count) { index in
-                NavigationLink(destination:
-                                TaskDetailedStepsView(task: $tasks[index]))
-                {
-                    Text(tasks[index].name)
-                    
+                ForEach(searchResult, id: \.self) { task in
+                        let taskIndex = tasks.firstIndex(of: task)!
+                        NavigationLink(destination:
+                                        TaskDetailedStepsView(task: $tasks[taskIndex]))
+                        {
+                            Text(tasks[taskIndex].name)
+                        }
+                    }
                 }
-                
-            }
-            .navigationTitle("Tasks")
-            }
+            
+            }.navigationTitle("Tasks")
+        }
+    }
+    
+    var searchResult: [Task] {
+        if searchText.isEmpty {
+            return tasks
+        } else {
+            let searchArray = ["\(searchText)"]
+            let filteredArray = tasks.filter { searchArray.contains($0.name) }
+            return filteredArray
         }
     }
     
