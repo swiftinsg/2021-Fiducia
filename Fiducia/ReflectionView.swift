@@ -69,7 +69,7 @@ struct ReflectionView: View {
                                 alignment: .topLeading
                             )
                             .padding(20)
-                        TextEditor(text: $goalInput)
+                        TextEditor(text: $journalInput)
                             .padding(30)
                     }
                     

@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct feelingButtonStyle: ButtonStyle {
+struct FeelingButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.system(size: 25))
@@ -33,7 +33,7 @@ struct FeelingsView: View {
                     }
                   .rotationEffect(Angle(degrees: -90))
                   .background(buttonPressed == 1 ? Color.blue.opacity(0.35) : Color.blue.opacity(0.15))
-                  .buttonStyle(feelingButtonStyle())
+                  .buttonStyle(FeelingButtonStyle())
                   .clipShape(Circle())
                   .padding(5)
             Button("):") {
@@ -41,7 +41,7 @@ struct FeelingsView: View {
                     }
                     .rotationEffect(Angle(degrees: -90))
                     .background(buttonPressed == 2 ? Color.blue.opacity(0.35) : Color.blue.opacity(0.15))
-                    .buttonStyle(feelingButtonStyle())
+                    .buttonStyle(FeelingButtonStyle())
                     .clipShape(Circle())
                     .padding(5)
             Button(":/") {
@@ -49,7 +49,7 @@ struct FeelingsView: View {
                     }
                     .rotationEffect(Angle(degrees: 90))
                     .background(buttonPressed == 3 ? Color.blue.opacity(0.35) : Color.blue.opacity(0.15))
-                    .buttonStyle(feelingButtonStyle())
+                    .buttonStyle(FeelingButtonStyle())
                     .clipShape(Circle())
                     .padding(5)
                 
@@ -58,7 +58,7 @@ struct FeelingsView: View {
                     }
                     .rotationEffect(Angle(degrees: 90))
                     .background(buttonPressed == 4 ? Color.blue.opacity(0.35) : Color.blue.opacity(0.15))
-                    .buttonStyle(feelingButtonStyle())
+                    .buttonStyle(FeelingButtonStyle())
                     .clipShape(Circle())
                     .padding(5)
             Button(":D") {
@@ -66,7 +66,7 @@ struct FeelingsView: View {
                     }
                     .rotationEffect(Angle(degrees: 90))
                     .background(buttonPressed == 5 ? Color.blue.opacity(0.35) : Color.blue.opacity(0.15))
-                    .buttonStyle(feelingButtonStyle())
+                    .buttonStyle(FeelingButtonStyle())
                     .clipShape(Circle())
                     .padding(5)
 

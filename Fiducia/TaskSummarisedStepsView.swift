@@ -11,7 +11,7 @@ struct TaskSummarisedStepsView: View {
     
     @Binding var task: Task
     
-    @State var text = "Write down any tips"
+    @State var text = ""
     
     @State var newStep: String = ""
     
@@ -27,6 +27,7 @@ struct TaskSummarisedStepsView: View {
                 TextEditor(text: $task.steps[index - 1])
             }
        }
+
     }
 }
 /*

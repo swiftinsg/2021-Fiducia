@@ -15,7 +15,7 @@ struct TasksView: View {
     
     @State var searchText = ""
 
-    @State var tasks = [Task(name: "Make a call", difficulty: 1, steps: ["Locate the stall you want to order from and where the queue is",
+    @State var tasks = [Task(name: "Order food from hawker stall", difficulty: 1, steps: ["Locate the stall you want to order from and where the queue is",
                                                                          "Stand up from your seat",
                                                                          "Take a deep breath and walk a few steps forwards",
                                                                          "Continue on at your place",
@@ -35,7 +35,7 @@ struct TasksView: View {
                                                                          Tip: If you don't want to speak to them, you can bow slightly or nod your head.
                                                                          """,
                                                                          "Walk away"]),
-                 Task(name: "Order food from hawker stall", difficulty: 3, steps: ["yes", "hi"])]
+                 Task(name: "Make a phone call", difficulty: 3, steps: ["yes", "hi"])]
 
     var body: some View {
         NavigationView {
