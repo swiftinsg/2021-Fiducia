@@ -12,6 +12,8 @@ struct TasksView: View {
     @State var text = ""
     
     @State var isEditing = false
+    
+    @State var searchText = ""
 
     @State var tasks = [Task(name: "Make a call", difficulty: 1, steps: ["Locate the stall you want to order from and where the queue is",
                                                                          "Stand up from your seat",
@@ -73,9 +75,6 @@ struct TasksView: View {
                             Button(action: {
                                 self.text = ""
                             }) {
-                                Image(systemName: "multiply.circle.fill")
-                                    .foregroundColor(.gray)
-                                    .padding(.trailing, 8)
                             }
                         }
                     }
