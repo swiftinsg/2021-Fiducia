@@ -17,6 +17,7 @@ struct ReflectionView: View {
     @State var journalInput: String = ""
     @State private var date = Date()
     @State private var pickerReset = UUID()
+    @State private var wordCount: Int = 0
     
     
     var body: some View {
@@ -37,6 +38,16 @@ struct ReflectionView: View {
                             .padding(20)
                         TextEditor(text: $goalInput)
                             .padding(30)
+                        
+                        HStack {
+                            Spacer()
+                            VStack {
+                                Spacer()
+                                Text("\(goalInput.count)/200")
+                            }
+                            .padding(20)
+                        }
+                        .padding(20)
                     }
                     
                     Spacer()
@@ -71,6 +82,12 @@ struct ReflectionView: View {
                             .padding(20)
                         TextEditor(text: $journalInput)
                             .padding(30)
+                            .onChange(of: journalInput) { value in
+                                                let words = journalInput.split { $0 == " " || $0.isNewline }
+                                                self.wordCount = words.count
+                            }
+                                            }
+                    Text("\(journalInput.count)")
                     }
                     
                 }
@@ -81,7 +98,6 @@ struct ReflectionView: View {
         
     }
     
-}
 
 struct ReflectionView_Previews: PreviewProvider {
     static var previews: some View {

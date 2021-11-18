@@ -23,43 +23,26 @@ struct NextButtonStyle: ButtonStyle {
 struct TaskDetailedStepsView: View {
     
     @Binding var task: Task
-    @State var showSummarised = false
     @State var stepCount = 0
+    @State var showSheet = false
     
     var body: some View {
-        NavigationLink(destination: TaskSummarisedStepsView(task: $task), isActive: $showSummarised) {
-        }
-        .buttonStyle(PlainButtonStyle())
-        .navigationTitle(task.name)
-        .navigationBarItems(
-            trailing: Button(action: {
-                showSummarised = true
-            }, label: {
-                Image(systemName: "list.bullet.rectangle")
-            }
-                             )
-            )
-        ProgressView(value: Double(stepCount), total: Double(task.steps.count))
-            .padding()
-        
-        
-        if stepCount + 1 <= task.steps.count {
-            Spacer()
-            ZStack {
-                RoundedRectangle(cornerRadius: 25, style:
-                                        .continuous)
+            
+        NavigationView {
+            
+            VStack {
                 
-                    .fill(Color.blue.opacity(0.1))
-
+                ProgressView(value: Double(stepCount), total: Double(task.steps.count))
                 
-                    .frame(
-                        maxWidth: .infinity,
-                        maxHeight: .infinity,
-                        alignment: .topLeading
-                        
-                    )
-                    .overlay(
-                        VStack {
+                if stepCount + 1 <= task.steps.count {
+                
+                    RoundedRectangle(cornerRadius: 25, style: .continuous)
+                        .fill(Color.blue.opacity(0.1))
+                        .frame(
+                            maxWidth: .infinity,
+                            maxHeight: .infinity
+                        )
+                        .overlay(
                             Text(task.steps[stepCount])
                                 .font(.system(size: 30))
                                 .frame(
@@ -68,47 +51,62 @@ struct TaskDetailedStepsView: View {
                                     alignment: .topLeading
                                 )
                                 .padding(30)
-                        }
-                )
-                    .padding(20)
-            }
-    
-            Spacer()
-            if stepCount + 1 < task.steps.count {
-                Button(action: {
-                    stepCount += 1
-                }, label: {
-                    HStack {
-                        Text("Next")
-                        Image(systemName: "arrow.right")
+                        )
+                        .padding(20)
+                    Spacer()
+                    if stepCount + 1 < task.steps.count {
+                        Button(action: {
+                            stepCount += 1
+                            
+                        }, label: {
+                            HStack {
+                                Text("Next")
+                                Image(systemName: "arrow.right")                                
+                            }
+                        })
+                            .buttonStyle(NextButtonStyle())
+                            .padding()
+                        
+                    } else {
+                        Button(action: {
+                            stepCount += 1
+                    
+                        }, label: {
+                            Text("Complete")
+                        })
+                            .buttonStyle(NextButtonStyle())
+                            .padding()
                     }
                     
-                })
-                    .buttonStyle(NextButtonStyle())
-                    .padding()
-            } else {
-                Button(action: {
-                    stepCount += 1
-                }, label: {
-                    Text("Complete")
-                })
-                    .buttonStyle(NextButtonStyle())
-                    .padding()
-        }
-        
-        } else {
-            Text("Good job!")
-            Button(action: {
-            }, label: {
-                Text("Complete")
-            })
-                .buttonStyle(NextButtonStyle())
-                .padding()
+                    Spacer()
+                
+                } else {
+                    Text("Good job!")
+                    Button(action: {
+                    }, label: {
+                        Text("Complete")
+                    })
+                        .buttonStyle(NextButtonStyle())
+                        .padding()
+                }
             }
+        }
+        .navigationTitle(task.name)
+        .toolbar {
+            ToolbarItem {
+                Button(action: {
+                    self.showSheet.toggle()
+                }) {
+                    Image(systemName: "list.bullet.rectangle")
+                }.sheet(isPresented: $showSheet) {
+                    TaskSummarisedStepsView(task: $task)
+                }
+            }
+        }
     }
 }
-
-
+       
+     
 
 struct TaskDetailedStepsView_Previews: PreviewProvider {
     static var previews: some View {
