@@ -21,6 +21,7 @@
 		2EA0B030274214A20026B8D3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B02F274214A20026B8D3 /* Task.swift */; };
 		2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */; };
 		2EA0B03427422C630026B8D3 /* TaskSummarisedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */; };
+		2EBF0A4A27462B8C0073007D /* TasksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF0A4927462B8C0073007D /* TasksData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		2EA0B02F274214A20026B8D3 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailedStepsView.swift; sourceTree = "<group>"; };
 		2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSummarisedStepsView.swift; sourceTree = "<group>"; };
+		2EBF0A4927462B8C0073007D /* TasksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */,
 				2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */,
 				2EA0B02F274214A20026B8D3 /* Task.swift */,
+				2EBF0A4927462B8C0073007D /* TasksData.swift */,
 				2EA0B02D2742124C0026B8D3 /* ReflectionView.swift */,
 				2E07B81A2744D165004AA826 /* FeelingsView.swift */,
 				2EA0B00327420D610026B8D3 /* Assets.xcassets */,
@@ -280,6 +283,7 @@
 			files = (
 				2E07B81B2744D165004AA826 /* FeelingsView.swift in Sources */,
 				2EA0B00227420D5E0026B8D3 /* ContentView.swift in Sources */,
+				2EBF0A4A27462B8C0073007D /* TasksData.swift in Sources */,
 				2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */,
 				2EA0B02E2742124C0026B8D3 /* ReflectionView.swift in Sources */,
 				2EA0B02C2742121B0026B8D3 /* ProgressTabView.swift in Sources */,

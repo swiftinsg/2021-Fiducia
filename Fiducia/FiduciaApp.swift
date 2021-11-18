@@ -8,10 +8,25 @@
 import SwiftUI
 
 @main
-struct FiduciaApp: App {
+struct Fiducia: App {
+    
+    @ObservedObject var tasksData = TasksData()
+    @Environment(\.scenePhase) private var scenePhase
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView()//tasks: $tasksData.tasks)
+                .onAppear {
+                    tasksData.load()
+                }
+                .onChange(of: scenePhase) { phase in
+                    if phase == .inactive {
+                        tasksData.save()
+                    }
+                }
+            
         }
+        
+        
     }
 }

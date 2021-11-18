@@ -33,6 +33,7 @@ struct TaskDetailedStepsView: View {
             VStack {
                 
                 ProgressView(value: Double(stepCount), total: Double(task.steps.count))
+                    .padding(20)
                 
                 if stepCount + 1 <= task.steps.count {
                 
@@ -89,6 +90,7 @@ struct TaskDetailedStepsView: View {
                         .buttonStyle(NextButtonStyle())
                         .padding()
                 }
+                Spacer()
             }
         }
         .navigationTitle(task.name)

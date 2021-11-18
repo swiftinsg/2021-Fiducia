@@ -15,29 +15,12 @@ struct TasksView: View {
     
     @State var searchText = ""
 
-    @State var tasks = [Task(name: "Order food from hawker stall", difficulty: 1, steps: ["Locate the stall you want to order from and where the queue is",
-                                                                         "Stand up from your seat",
-                                                                         "Take a deep breath and walk a few steps forwards",
-                                                                         "Continue on at your place",
-                                                                         """
-                                                                         Find what you want to order and jot it down
-                                                                         Tip: If you're afraid that the stall owner may call upon you, you can use your phone to take a picture of the menu using your phone and then refer to it to decide on your order.
-                                                                         """,
-                                                                         "Recite the order in your mind",
-                                                                         "Walk up to the stall",
-                                                                         """
-                                                                         When it's your turn, read out your order.
-                                                                         Tip: Reading fast might make you stumble over your words. Read slowly and steadily. It's okay, no one will judge you
-                                                                         """,
-                                                                         "After your order has been taken down, walk to an empty space while it is being prepared",
-                                                                         """
-                                                                         Thank the person
-                                                                         Tip: If you don't want to speak to them, you can bow slightly or nod your head.
-                                                                         """,
-                                                                         "Walk away"]),
-                 Task(name: "Make a phone call", difficulty: 3, steps: ["yes", "hi"])]
+    @Binding var tasks: [Task]
+    
 
     var body: some View {
+        
+        
         NavigationView {
             VStack {
                HStack {
@@ -109,6 +92,6 @@ struct TasksView: View {
 
 struct TasksView_Previews: PreviewProvider {
     static var previews: some View {
-        TasksView()
+        TasksView(tasks: .constant([Task(name: "Make a ffcall", difficulty: 1, steps: ["hi"])]))
     }
 }
