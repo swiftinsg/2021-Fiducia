@@ -11,13 +11,16 @@ import SwiftUI
 struct ReflectionView: View {
     init() {
            UITextView.appearance().backgroundColor = .clear
-       }
+    }
     
     @State var goalInput: String = ""
-    @State var journalInput: String = ""
-    @State private var date = Date()
     @State private var pickerReset = UUID()
     @State private var wordCount: Int = 0
+    @State var dateSelect = Date()
+    
+    @State var dailyJournal = [Journal(date: Date(), journalInput: "", feelingsInput: 0)]
+    
+  //  @State var filteredDailyJournals: [Journal]
     
     
     var body: some View {
@@ -53,7 +56,7 @@ struct ReflectionView: View {
                     Spacer()
                     
                     DatePicker(
-                         selection: $date,
+                        selection: $dateSelect,
                          in: ...Date(),
                          displayedComponents: [.date],
                          label: {
@@ -61,7 +64,8 @@ struct ReflectionView: View {
                              )
                         .labelsHidden()
                         .frame(alignment: .leading)
-                        .id(self.pickerReset)
+                        }
+                .id(self.pickerReset)
                 
                         
                     FeelingsView()
@@ -80,23 +84,20 @@ struct ReflectionView: View {
                                 alignment: .topLeading
                             )
                             .padding(20)
-                        TextEditor(text: $journalInput)
+                        TextEditor(text: $dailyJournal[0].journalInput)
                             .padding(30)
-                            .onChange(of: journalInput) { value in
-                                                let words = journalInput.split { $0 == " " || $0.isNewline }
-                                                self.wordCount = words.count
-                            }
+                        }
+                
                                             }
-                    Text("\(journalInput.count)")
+                    Text("\(dailyJournal[0].journalInput.count)")
                     }
                     
                 }
-                .navigationTitle("Reflection")
+              //  .navigationTitle("Reflection")
                 
             }
-        }
+    
         
-    }
     
 
 struct ReflectionView_Previews: PreviewProvider {

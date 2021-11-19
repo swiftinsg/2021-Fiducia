@@ -27,7 +27,7 @@ class TasksData: ObservableObject {
                                                                                                            "After your order has been taken down, walk to an empty space while it is being prepared",
                                                                                                            """
                                                                                                            Thank the person
-                                                                                                           Tip: If you don't want to speak to them, you can bow slightly or nod your head.
+                                                                                                           Tip: rIf you don't want to speak to them, you can bow slightly or nod your head.
                                                                                                            """,
                                                                                                            "Walk away"]),
                                                    Task(name: "Make a phone call", difficulty: 3, steps: ["yes", "hi"])]
