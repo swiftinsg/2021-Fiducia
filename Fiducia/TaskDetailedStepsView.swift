@@ -44,14 +44,16 @@ struct TaskDetailedStepsView: View {
                             maxHeight: .infinity
                         )
                         .overlay(
-                            Text(task.steps[stepCount])
-                                .font(.system(size: 30))
-                                .frame(
-                                    maxWidth: .infinity,
-                                    maxHeight: .infinity,
-                                    alignment: .topLeading
-                                )
-                                .padding(30)
+                            ScrollView {
+                                Text(task.steps[stepCount])
+                                    .font(.system(size: 30))
+                                    .frame(
+                                        maxWidth: .infinity,
+                                        maxHeight: .infinity,
+                                        alignment: .topLeading
+                                    )
+                                    .padding(30)
+                            }
                         )
                         .padding(20)
                     Spacer()
