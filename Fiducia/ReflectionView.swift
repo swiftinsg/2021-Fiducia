@@ -89,7 +89,7 @@ struct ReflectionView: View {
                     Text("\(filteredJournals)" as String)
                 }
                 
-            }
+            }.navigationTitle("Reflection")
                    
         }
         .onChange(of: dateSelect) { _ in
