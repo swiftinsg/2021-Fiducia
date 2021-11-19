@@ -38,7 +38,7 @@ struct TaskDetailedStepsView: View {
                 if stepCount + 1 <= task.steps.count {
                 
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(Color.blue.opacity(0.1))
+                        .fill(Color.lightBlue)
                         .frame(
                             maxWidth: .infinity,
                             maxHeight: .infinity

@@ -22,6 +22,7 @@ struct ReflectionView: View {
     @State var filteredJournals: [Journal] = []
     
     
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -31,7 +32,7 @@ struct ReflectionView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 25, style:
                                                 .continuous)
-                            .fill(Color.blue.opacity(0.1))
+                            .fill(Color.lightBlue)
                             .frame(height: 170).frame(
                                 maxWidth: .infinity,
                                 maxHeight: .infinity,
@@ -74,7 +75,7 @@ struct ReflectionView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 25, style:
                                                 .continuous)
-                            .fill(Color.blue.opacity(0.1))
+                            .fill(Color.lightBlue)
                             .frame(height: 250).frame(
                                 maxWidth: .infinity,
                                 maxHeight: .infinity,
