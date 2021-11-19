@@ -14,13 +14,12 @@ struct ReflectionView: View {
     }
     
     @State var goalInput: String = ""
-    @State private var pickerReset = UUID()
     @State private var wordCount: Int = 0
     @State var dateSelect = Date()
     
     @State var dailyJournal = [Journal(date: Date(), journalInput: "", feelingsInput: 0)]
     
-  //  @State var filteredDailyJournals: [Journal]
+    @State var filteredJournals: [Journal] = []
     
     
     var body: some View {
@@ -55,7 +54,7 @@ struct ReflectionView: View {
                     
                     Spacer()
                     
-                    DatePicker(
+                    DatePicker (
                         selection: $dateSelect,
                          in: ...Date(),
                          displayedComponents: [.date],
@@ -64,8 +63,6 @@ struct ReflectionView: View {
                              )
                         .labelsHidden()
                         .frame(alignment: .leading)
-                        }
-                .id(self.pickerReset)
                 
                         
                     FeelingsView()
@@ -86,19 +83,22 @@ struct ReflectionView: View {
                             .padding(20)
                         TextEditor(text: $dailyJournal[0].journalInput)
                             .padding(30)
+                        
                         }
-                
-                                            }
                     Text("\(dailyJournal[0].journalInput.count)")
-                    }
-                    
+                    Text("\(filteredJournals)" as String)
                 }
-              //  .navigationTitle("Reflection")
                 
             }
-    
-        
-    
+                   
+        }
+        .onChange(of: dateSelect) { _ in
+            filteredJournals = dailyJournal.filter { journal in
+                journal.date.timeIntervalSince(dateSelect) < 86400
+            }
+        }
+    }
+}
 
 struct ReflectionView_Previews: PreviewProvider {
     static var previews: some View {

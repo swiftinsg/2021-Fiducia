@@ -94,6 +94,7 @@ struct TaskDetailedStepsView: View {
             }
         }
         .navigationTitle(task.name)
+        
         .toolbar {
             ToolbarItem {
                 Button(action: {
