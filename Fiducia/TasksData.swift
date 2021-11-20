@@ -30,12 +30,11 @@ class TasksData: ObservableObject {
                                                                                                            Tip: rIf you don't want to speak to them, you can bow slightly or nod your head.
                                                                                                            """,
                                                                                               "Walk away"]),
-                            Task(name: "Make a phone call", difficulty: 3, steps: ["yes", "hi"]),
-                            Task(name: "Take the public transport ⭐️", difficulty: 1, steps: ["Open your browser.",
-                                                                                              "Search for the train line map.",
-                                                                                              "Locate the destination you want to go to.",
-                                                                                              "Plan out your route. (no. of trains you need to change, etc.)",
-                                                                                              "Observe your surroundings for signs pointing to where your train is.",
+                            Task(name: "Take the public transport ⭐️", difficulty: 1, steps: ["Open your browser",
+                                                                                              "Search for the train line map",
+                                                                                              "Locate the destination you want to go to",
+                                                                                              "Plan out your route (no. of trains you need to change, etc.)",
+                                                                                              "Observe your surroundings for signs pointing to where your train is",
                                                                                               "Follow the signs and walk slowly so you don't miss any of them.",
                                                                                               "While waiting, you can check the arrival time of your train online through the train company's website.",
                                                                                               "Be aware of the time.",
@@ -45,8 +44,7 @@ class TasksData: ObservableObject {
                                                                                               "Move towards an open seat or an open area.",
                                                                                               "Sit on the seat or stand at an open space.",
                                                                                               "Wait for your station.",
-                                                                                              "When you reach your destination, leave the train.",
-                                                                                              "You're done."]),
+                                                                                              "When you reach your destination, leave the train."]),
                             Task(name: "Greet a neighbour ⭐️", difficulty: 1, steps: ["Choose a neighbour, as well as a time when they are relaxed and not in a hurry.",
                                                                                       "Choose an appropriate gift to give them, such as homemade treats, home grown veggies, or just anything homemade to give off a more positive impression.",
                                                                                       """
@@ -62,8 +60,7 @@ class TasksData: ObservableObject {
                                                                                       "Hand them the gift and say: 'I just wanted to give this to you, there was too much of it so we had some leftovers. Hope you like it.'",
                                                                                       "Bow slightly.",
                                                                                       "Thank them for their time.",
-                                                                                      "Turn to walk away.",
-                                                                                      "You're done."]),
+                                                                                      "Turn to walk away."]),
                             Task(name: "Thank a cleaner, bus driver, etc. ⭐️", difficulty: 1, steps: ["""
                                                                                                       Find someone you want to thank.
                                                                                                       Tip : Try not to disturb someone who is busy, you might irritate them.
@@ -80,8 +77,7 @@ class TasksData: ObservableObject {
                                                                                                       "Apologise for disturbing their work.",
                                                                                                       "Say: 'I just wanted to tell you' then read out loud what you have recited.",
                                                                                                       "Bow slightly.",
-                                                                                                      "Leave",
-                                                                                                      "You're done."]),
+                                                                                                      "Leave"]),
                             Task(name: "When buying groceries, check out by cashier rather than self checkout ⭐️", difficulty: 1, steps: ["""
                                                                                                                                           Bring a recyclable bag. (You can skip this step.)
                                                                                                                                           They will charge 20¢ for the plastic bags.
@@ -110,11 +106,7 @@ class TasksData: ObservableObject {
                                                                                                                                           "Carry your bags.",
                                                                                                                                           "Check from the recipt if the right amount has been deducted from your card and the right amount of change is given.",
                                                                                                                                           "Say thank you to the cashier.",
-                                                                                                                                          "Take your items and swiftly leave the scene.",
-                                                                                                                                          """
-                                                                                                                                          Done!
-                                                                                                                                          See, not that hard right.
-                                                                                                                                          """]),
+                                                                                                                                          "Take your items and swiftly leave the scene."]),
                             Task(name: "Calming down ⭐️", difficulty: 1, steps: ["Focus on your breathing.",
                                                                                  "Close your mouth and inhale through your nose for 4 seconds.",
                                                                                  "Hold your mouth and count to 7.",
@@ -138,11 +130,7 @@ class TasksData: ObservableObject {
                                                                                   Examples to challenge this thought: 'That man looking towards my direction is probably judging me because I look dumb not knowing where I am.' Think logically and write it down 'he might be looking for someone that's near me' or 'maybe he's looking off into blank space'.
                                                                                   """,
                                                                                  "Realise that your thoughts are just thoughts and not reality.",
-                                                                                 "Repeat until you have completely gained a sense of yourself.",
-                                                                                  """
-                                                                                  Done.
-                                                                                  YAY :)
-                                                                                  """]),
+                                                                                 "Repeat until you have completely gained a sense of yourself."]),
                             Task(name: "Go out with a friend ⭐️⭐️", difficulty: 2, steps: ["""
                                                                                            Decide which friend you would like to make plans with.
                                                                                            Tip: Make sure you are comfortable with that friend.
@@ -159,8 +147,7 @@ class TasksData: ObservableObject {
                                                                                            "When you are walking chat with your friend with some off the topics you have in common.",
                                                                                            "Watch a movie or have lunch together.",
                                                                                            "After the day has ended, take a deep breath and say goodbye to your friend.",
-                                                                                           "Exit the scene by calmly walking way.",
-                                                                                           "Yayy, done!"])]
+                                                                                           "Exit the scene by calmly walking way.",])]
     func getArchiveURL() -> URL {
         let plistName = "tasks.plist"
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!

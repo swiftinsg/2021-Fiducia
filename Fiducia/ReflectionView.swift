@@ -90,7 +90,8 @@ struct ReflectionView: View {
                     Text("\(filteredJournals)" as String)
                 }
                 
-            }.navigationTitle("Reflection")
+            }
+            .navigationTitle("Reflection")
                    
         }
         .onChange(of: dateSelect) { _ in
@@ -98,6 +99,7 @@ struct ReflectionView: View {
                 journal.date.timeIntervalSince(dateSelect) < 86400
             }
         }
+        
     }
 }
 

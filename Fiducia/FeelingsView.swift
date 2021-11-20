@@ -45,7 +45,7 @@ struct FeelingsView: View {
             
             RoundedRectangle(cornerRadius: 10, style:
                                     .continuous)
-                .fill(Color.blue.opacity(0.1))
+                .fill(Color.lightBlue)
                 .frame(height: 85).frame(
                     maxWidth: .infinity,
                     maxHeight: .infinity,

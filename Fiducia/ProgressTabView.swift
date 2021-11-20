@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProgressTabView: View {
+    @State var statistics = [Statistic(numberTasksCompletedDaily: 0, typeTasksCompleted: [], achievementsCompleted: [])]
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }

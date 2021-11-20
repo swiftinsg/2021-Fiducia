@@ -33,7 +33,7 @@ struct TasksView: View {
                 } else {
                     let tasks = tasksData.tasks.filter { task in
                         task.name.lowercased().contains(searchText.lowercased())
-                        
+            
                     }
                     ForEach(tasks) { task in
                         let taskIndex = tasksData.tasks.firstIndex(of: task)!

@@ -25,6 +25,7 @@ struct TaskDetailedStepsView: View {
     @Binding var task: Task
     @State var stepCount = 0
     @State var showSheet = false
+    @State var complete = false
     
     var body: some View {
             
@@ -86,6 +87,8 @@ struct TaskDetailedStepsView: View {
                 } else {
                     Text("Good job!")
                     Button(action: {
+                        
+                        complete = true
                     }, label: {
                         Text("Complete")
                     })
@@ -96,7 +99,6 @@ struct TaskDetailedStepsView: View {
             }
         }
         .navigationTitle(task.name)
-        
         .toolbar {
             ToolbarItem {
                 Button(action: {
