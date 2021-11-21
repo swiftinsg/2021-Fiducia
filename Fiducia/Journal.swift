@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Journal: Identifiable, Codable, Hashable {
+struct Journal: Identifiable, Codable, Hashable, Equatable {
     
     var id = UUID()
     
