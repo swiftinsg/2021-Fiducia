@@ -18,6 +18,7 @@ struct TasksView: View {
     @ObservedObject var tasksData = TasksData()
     
     @State var searchText = ""
+    @State var showSheet = false
     
     var body: some View {
         NavigationView {
@@ -28,8 +29,21 @@ struct TasksView: View {
                                         TaskDetailedStepsView(task: $task))
                         {
                             Text(task.name)
+                                .sheet(isPresented: $showSheet) {
+                                    TaskSummarisedStepsView(task: $task)
+                                }
+                            
+
+                        }
+                        .swipeActions(edge: .leading) {
+                            Button(action: {
+                                self.showSheet.toggle()
+                            }) {
+                                Image(systemName: "list.bullet.rectangle")
+                            }
                         }
                     }
+
                 } else {
                     let tasks = tasksData.tasks.filter { task in
                         task.name.lowercased().contains(searchText.lowercased())
@@ -41,13 +55,27 @@ struct TasksView: View {
                                         TaskDetailedStepsView(task: $tasksData.tasks[taskIndex]))
                         {
                             Text(task.name)
+                                                            
                         }
+                        
                     }
                 }
-                
             }
+
+            
             .searchable(text: $searchText)
-            .navigationTitle("Tasks")
+            .navigationTitle("Tasks")       /*     .toolbar {
+                ToolbarItem {
+                    Button(action: {
+                        self.showSheet.toggle()
+                    }) {
+                        Image(systemName: "plus")
+                    }.sheet(isPresented: $showSheet) {
+                        TaskSummarisedStepsView(task: $task)
+                    }
+                }
+            }*/
+            
         }
     }
 }

@@ -99,8 +99,7 @@ struct TaskDetailedStepsView: View {
             }
         }
         .navigationTitle(task.name)
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(false)
+     //   .navigationBarHidden(true)
         
         .toolbar {
             ToolbarItem {
