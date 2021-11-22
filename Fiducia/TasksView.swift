@@ -64,17 +64,15 @@ struct TasksView: View {
 
             
             .searchable(text: $searchText)
-            .navigationTitle("Tasks")       /*     .toolbar {
+            .navigationTitle("Tasks")
+            .toolbar {
                 ToolbarItem {
                     Button(action: {
-                        self.showSheet.toggle()
                     }) {
                         Image(systemName: "plus")
-                    }.sheet(isPresented: $showSheet) {
-                        TaskSummarisedStepsView(task: $task)
                     }
                 }
-            }*/
+            }
             
         }
     }

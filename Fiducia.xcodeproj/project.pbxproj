@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E07B81B2744D165004AA826 /* FeelingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E07B81A2744D165004AA826 /* FeelingsView.swift */; };
+		2E4BE6AD274BA0E0003ECCB3 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BE6AC274BA0E0003ECCB3 /* NewTaskView.swift */; };
 		2E8B0A09274747A200129B11 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B0A08274747A200129B11 /* Journal.swift */; };
 		2E8B0A0B2748FA9400129B11 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B0A0A2748FA9400129B11 /* Statistic.swift */; };
 		2EA0B00027420D5E0026B8D3 /* FiduciaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0AFFF27420D5E0026B8D3 /* FiduciaApp.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		2E07B81A2744D165004AA826 /* FeelingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsView.swift; sourceTree = "<group>"; };
+		2E4BE6AC274BA0E0003ECCB3 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		2E8B0A08274747A200129B11 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		2E8B0A0A2748FA9400129B11 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
 		2EA0AFFC27420D5E0026B8D3 /* Fiducia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fiducia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 				2EA0B02B2742121B0026B8D3 /* ProgressTabView.swift */,
 				2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */,
 				2EA0B0292742120B0026B8D3 /* TasksView.swift */,
+				2E4BE6AC274BA0E0003ECCB3 /* NewTaskView.swift */,
 				2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */,
 				2EA0B02F274214A20026B8D3 /* Task.swift */,
 				2EBF0A4927462B8C0073007D /* TasksData.swift */,
@@ -295,6 +298,7 @@
 				2EA0B02C2742121B0026B8D3 /* ProgressTabView.swift in Sources */,
 				2E8B0A0B2748FA9400129B11 /* Statistic.swift in Sources */,
 				2EA0B02A2742120B0026B8D3 /* TasksView.swift in Sources */,
+				2E4BE6AD274BA0E0003ECCB3 /* NewTaskView.swift in Sources */,
 				2E8B0A09274747A200129B11 /* Journal.swift in Sources */,
 				2EA0B030274214A20026B8D3 /* Task.swift in Sources */,
 				2EA0B00027420D5E0026B8D3 /* FiduciaApp.swift in Sources */,
