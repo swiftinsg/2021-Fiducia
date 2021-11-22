@@ -7,11 +7,25 @@
 
 import SwiftUI
 
+struct FeelingButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 25))
+            .foregroundColor(.white)
+            .frame(width: 25)
+            .padding()
+    }
+    
+}
+
+
 
 struct ReflectionView: View {
     init() {
            UITextView.appearance().backgroundColor = .clear
     }
+    
+    
     
     @State var goalInput: String = ""
     
@@ -68,7 +82,70 @@ struct ReflectionView: View {
                         .frame(alignment: .leading)
                 
                         
-                    FeelingsView()
+                    ZStack {
+                        
+                        RoundedRectangle(cornerRadius: 10, style:
+                                                .continuous)
+                            .fill(Color.lightBlue)
+                            .frame(height: 85).frame(
+                                maxWidth: .infinity,
+                                maxHeight: .infinity,
+                                alignment: .topLeading
+                            )
+                            .padding(20)
+                        
+                        HStack {
+                
+                            Button("D:")
+                            {
+                                dailyJournal[0].feelingsInput = 1
+                                }
+                            .rotationEffect(Angle(degrees: -90))
+                            .background(dailyJournal[0].feelingsInput == 1 ? Color.aquaBlue : Color.lightGrey)
+                            .buttonStyle(FeelingButtonStyle())
+                            .clipShape(Circle())
+                            .padding(5)
+                            Button("):") {
+                                dailyJournal[0].feelingsInput = 2
+                                
+                            }
+                            .rotationEffect(Angle(degrees: -90))
+                            .background(dailyJournal[0].feelingsInput == 2 ? Color.aquaBlue : Color.lightGrey)
+                            .buttonStyle(FeelingButtonStyle())
+                            .clipShape(Circle())
+                            .padding(5)
+                            Button(":/") {
+                                dailyJournal[0].feelingsInput = 3
+                                
+                            }
+                            .rotationEffect(Angle(degrees: 90))
+                            .background(dailyJournal[0].feelingsInput == 3 ? Color.aquaBlue : Color.lightGrey)
+                            .buttonStyle(FeelingButtonStyle())
+                            .clipShape(Circle())
+                            .padding(5)
+                            
+                            Button(":)") {
+                                dailyJournal[0].feelingsInput = 4
+                                
+                            }
+                            .rotationEffect(Angle(degrees: 90))
+                            .background(dailyJournal[0].feelingsInput == 4 ? Color.aquaBlue : Color.lightGrey)
+                            .buttonStyle(FeelingButtonStyle())
+                            .clipShape(Circle())
+                            .padding(5)
+                            Button(":D") {
+                                dailyJournal[0].feelingsInput = 5
+                                
+                            }
+                            .rotationEffect(Angle(degrees: 90))
+                            .background(dailyJournal[0].feelingsInput == 5 ? Color.aquaBlue : Color.lightGrey)
+                            .buttonStyle(FeelingButtonStyle())
+                            .clipShape(Circle())
+                            .padding(5)
+                        }
+                        
+
+                    }
                     
             
                     Text("Today's journal:")

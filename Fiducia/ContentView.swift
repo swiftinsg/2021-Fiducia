@@ -7,6 +7,22 @@
 
 import SwiftUI
 
+extension Color {
+    public static var lightBlue: Color {
+        return Color(red: 231.0 / 255.0, green: 239.0 / 255.0, blue: 253.0 / 255.0)
+    }
+    
+
+    public static var lightGrey: Color {
+        return Color(red: 220.0 / 255.0, green: 220.0 / 255.0, blue: 220.0 / 255.0)
+    }
+    
+    public static var aquaBlue: Color {
+        return Color(red: 114.0 / 255.0, green: 203.0 / 255.0, blue: 210.0 / 255.0)
+    }
+}
+
+
 struct ContentView: View {
     
     @Binding var tasks: [Task]

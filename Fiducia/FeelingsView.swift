@@ -4,7 +4,7 @@
 //
 //  Created by sap on 17/11/21.
 //
-
+/*
 import SwiftUI
 
 
@@ -19,25 +19,11 @@ struct FeelingButtonStyle: ButtonStyle {
     
 }
 
-extension Color {
-    public static var lightBlue: Color {
-        return Color(red: 231.0 / 255.0, green: 239.0 / 255.0, blue: 253.0 / 255.0)
-    }
-    
-
-    public static var lightGrey: Color {
-        return Color(red: 220.0 / 255.0, green: 220.0 / 255.0, blue: 220.0 / 255.0)
-    }
-    
-    public static var aquaBlue: Color {
-        return Color(red: 114.0 / 255.0, green: 203.0 / 255.0, blue: 210.0 / 255.0)
-    }
-}
-
 
 struct FeelingsView: View {
     
     @State var buttonPressed: Int = 0
+    @Binding var dailyJournal: [Journal]
     
     var body: some View {
         
@@ -114,3 +100,4 @@ struct FeelingsView_Previews: PreviewProvider {
         FeelingsView()
     }
 }
+*/
