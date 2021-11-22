@@ -14,20 +14,16 @@ struct ReflectionView: View {
     }
     
     @State var goalInput: String = ""
+    
     @State private var wordCount: Int = 0
-    @State var dateSelect = Date()
     
     @State var dailyJournal = [Journal(date: Date(), journalInput: "", feelingsInput: 0)]
     
-    @State var filteredJournals: [Journal] = [Journal(date: Date(), journalInput: "", feelingsInput: 0)]
+    @State var filteredJournals: [Journal] = []
     
     @State var journalText: String = ""
     
-    @State var changeCheck: [Journal] = []
-    
-    @State var saveCheck: [Journal] = []
-    
-    @State var dateIndex: Int = 0
+    @State var journalForDay = ""
         
     var body: some View {
         NavigationView {
@@ -62,7 +58,7 @@ struct ReflectionView: View {
                     Spacer()
                     
                     DatePicker (
-                        selection: $dateSelect,
+                        selection: $dailyJournal[0].date,
                          in: ...Date(),
                          displayedComponents: [.date],
                          label: {
@@ -73,7 +69,6 @@ struct ReflectionView: View {
                 
                         
                     FeelingsView()
-                    // bind buttonPressed such that its value can be brought over here
                     
             
                     Text("Today's journal:")
@@ -89,19 +84,25 @@ struct ReflectionView: View {
                                 alignment: .topLeading
                             )
                             .padding(20)
-                        TextEditor(text: $filteredJournals[0].journalInput)
+                        TextEditor(text: $dailyJournal[0].journalInput)
                             .padding(30)
+                            .onChange(of: dailyJournal[0].journalInput) { _ in
+                                dailyJournal = dailyJournal
+                                
+                            }
                         
                         }
-                    Text("\(filteredJournals[0].journalInput.count)")
-                    Text("\(filteredJournals[0].date)" as String)
-                    Button("Save") {
-                        saveCheck = dailyJournal.filter { journal in
-                            journal.date.timeIntervalSince(dateSelect) > 84600
+                    Text("\(dailyJournal[0].journalInput.count)")
+                    Text("\(filteredJournals)" as String)
+                    Text("\(dailyJournal[0].journalInput)")
+                 /*   Button("Save") {
+                       // saveCheck = dailyJournal.filter { journal in
+                 //           journal.date.timeIntervalSince(dateSelect) > 84600
                             // i think it has to do with the number
-                        }
-                        if saveCheck.isEmpty {
+                        
+                        if changeCheck.isEmpty {
                             dailyJournal.append(Journal(date: dateSelect, journalInput: filteredJournals[0].journalInput, feelingsInput: 0))
+                            
                             // change the value of feelingsInput to the value given by buttonPressed
                         } else {
                             for j in dailyJournal {
@@ -113,28 +114,22 @@ struct ReflectionView: View {
                                 }
                             }
                         }
+                        }*/
                     }
 
                 }
-                
-            }
             .navigationTitle("Reflection")
                    
         }
-        .onChange(of: dateSelect) { _ in
-            changeCheck = dailyJournal.filter { journal in
-                journal.date.timeIntervalSince(dateSelect) > 84600
-                // i think it has to do with the number
-            }
-            if changeCheck.isEmpty {
-                filteredJournals = [Journal(date: dateSelect, journalInput: "", feelingsInput: 0)]
-            } else {
-                filteredJournals = changeCheck
+        .onChange(of: dailyJournal[0].date) { _ in
+            filteredJournals = dailyJournal.filter { journal in
+                journal.date.timeIntervalSince(dailyJournal[0].date) > 84600
             }
         }
-        
     }
 }
+        
+    
 
 struct ReflectionView_Previews: PreviewProvider {
     static var previews: some View {
