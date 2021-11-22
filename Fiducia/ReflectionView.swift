@@ -203,6 +203,9 @@ struct ReflectionView: View {
                 journal.date.timeIntervalSince(dailyJournal[0].date) > 84600
             }
         }
+        .onAppear {
+            dailyJournal[0].date = self.dailyJournal[0].date
+        }
     }
 }
         
