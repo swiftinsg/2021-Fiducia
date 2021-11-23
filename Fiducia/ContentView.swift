@@ -26,6 +26,7 @@ extension Color {
 struct ContentView: View {
     
     @Binding var tasks: [Task]
+    @ObservedObject var tasksData: TasksData
     
     @State var selection = 1
     var body: some View {
@@ -35,7 +36,7 @@ struct ContentView: View {
                     Label("Progress", systemImage: "chart.xyaxis.line")
                 }
                 .tag(0)
-            TasksView(tasks: .constant([Task(name: "Makec a call", difficulty: 1, steps: ["hi"])]))
+            TasksView(tasks: .constant([Task(name: "Make a call", difficulty: "1", steps: ["hi"])]), tasksData: TasksData())
                 .tabItem {
                     Label("Tasks", systemImage: "checklist")
                     
@@ -52,6 +53,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(tasks: .constant([Task(name: "Makec a call", difficulty: 1, steps: ["hi"])]))
+        ContentView(tasks: .constant([Task(name: "Makec a call", difficulty: "1", steps: ["hi"])]), tasksData: TasksData())
     }
 }

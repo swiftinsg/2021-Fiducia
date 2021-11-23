@@ -19,7 +19,7 @@ struct TaskSummarisedStepsView: View {
     
     var body: some View {
         
-       List {
+        List {
             ForEach(1..<task.steps.count) { index in
                 Text("Step \(index)")
                     .bold()
@@ -32,7 +32,7 @@ struct TaskSummarisedStepsView: View {
 }
 struct TaskSummarisedStepsView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskSummarisedStepsView(task: .constant(Task(name: "Make a call", difficulty: 1, steps: ["hi"])))
+        TaskSummarisedStepsView(task: .constant(Task(name: "Make a call", difficulty: "1", steps: ["hi"])))
     }
 }
 

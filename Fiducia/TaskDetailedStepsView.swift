@@ -119,6 +119,6 @@ struct TaskDetailedStepsView: View {
 
 struct TaskDetailedStepsView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskDetailedStepsView(task: .constant(Task(name: "Make a call", difficulty: 1, steps: ["hi"])))
+        TaskDetailedStepsView(task: .constant(Task(name: "Make a call", difficulty: "1", steps: ["hi"])))
     }
 }
