@@ -12,7 +12,7 @@ struct Task: Identifiable, Codable, Hashable {
     var id = UUID()
     
     var name: String
-    var difficulty: Double
+    var difficulty: String
     var steps: Array<String>
 }
 
