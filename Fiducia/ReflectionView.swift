@@ -21,24 +21,33 @@ struct FeelingButtonStyle: ButtonStyle {
 
 
 struct ReflectionView: View {
+    
     init() {
-           UITextView.appearance().backgroundColor = .clear
-    }
-    
-    
+                UITextView.appearance().backgroundColor = .clear
+            }
     
     @State var goalInput: String = ""
     
     @State private var wordCount: Int = 0
     
-    @State var dailyJournal = [Journal(date: Date(), journalInput: "", feelingsInput: 0)]
+    @State var dailyJournal = [Journal(date: "", journalInput: "", feelingsInput: 0)]
     
-    @State var filteredJournals: [Journal] = []
+    @State var filteredJournals: [Journal] = [Journal(date: "", journalInput: "", feelingsInput: 0)]
     
     @State var journalText: String = ""
     
     @State var journalForDay = ""
-        
+    
+    @State var saveCheck: [Journal] = []
+    
+    @State var changeCheck: [Journal] = []
+    
+    @State var dateIndex: Int = 0
+    
+    @State var feeling: Int = 0
+    
+    @State private var dateSelect = Date()
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -72,16 +81,17 @@ struct ReflectionView: View {
                     Spacer()
                     
                     DatePicker (
-                        selection: $dailyJournal[0].date,
-                         in: ...Date(),
-                         displayedComponents: [.date],
-                         label: {
-                             }
-                             )
+                        selection: $dateSelect,
+                        in: ...Date(),
+                        displayedComponents: [.date],
+                        label: {
+                        }
+                    )
                         .labelsHidden()
                         .frame(alignment: .leading)
-                
-                        
+                    
+                    
+                    
                     ZStack {
                         
                         RoundedRectangle(cornerRadius: 10, style:
@@ -95,59 +105,59 @@ struct ReflectionView: View {
                             .padding(20)
                         
                         HStack {
-                
+                            
                             Button("D:")
                             {
-                                dailyJournal[0].feelingsInput = 1
-                                }
+                                feeling = 1
+                            }
                             .rotationEffect(Angle(degrees: -90))
-                            .background(dailyJournal[0].feelingsInput == 1 ? Color.aquaBlue : Color.lightGrey)
+                            .background(feeling == 1 ? Color.aquaBlue : Color.lightGrey)
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
                             .padding(5)
                             Button("):") {
-                                dailyJournal[0].feelingsInput = 2
+                                feeling = 2
                                 
                             }
                             .rotationEffect(Angle(degrees: -90))
-                            .background(dailyJournal[0].feelingsInput == 2 ? Color.aquaBlue : Color.lightGrey)
+                            .background(feeling == 2 ? Color.aquaBlue : Color.lightGrey)
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
                             .padding(5)
                             Button(":/") {
-                                dailyJournal[0].feelingsInput = 3
+                                feeling = 3
                                 
                             }
                             .rotationEffect(Angle(degrees: 90))
-                            .background(dailyJournal[0].feelingsInput == 3 ? Color.aquaBlue : Color.lightGrey)
+                            .background(feeling == 3 ? Color.aquaBlue : Color.lightGrey)
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
                             .padding(5)
                             
                             Button(":)") {
-                                dailyJournal[0].feelingsInput = 4
+                                feeling = 4
                                 
                             }
                             .rotationEffect(Angle(degrees: 90))
-                            .background(dailyJournal[0].feelingsInput == 4 ? Color.aquaBlue : Color.lightGrey)
+                            .background(feeling == 4 ? Color.aquaBlue : Color.lightGrey)
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
                             .padding(5)
                             Button(":D") {
-                                dailyJournal[0].feelingsInput = 5
+                                feeling = 5
                                 
                             }
                             .rotationEffect(Angle(degrees: 90))
-                            .background(dailyJournal[0].feelingsInput == 5 ? Color.aquaBlue : Color.lightGrey)
+                            .background(feeling == 5 ? Color.aquaBlue : Color.lightGrey)
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
                             .padding(5)
                         }
                         
-
+                        
                     }
                     
-            
+                    
                     Text("Today's journal:")
                         .padding()
                     
@@ -161,55 +171,57 @@ struct ReflectionView: View {
                                 alignment: .topLeading
                             )
                             .padding(20)
-                        TextEditor(text: $dailyJournal[0].journalInput)
+                        TextEditor(text: $filteredJournals[0].journalInput)
                             .padding(30)
-                            .onChange(of: dailyJournal[0].journalInput) { _ in
-                                dailyJournal = dailyJournal
-                                
-                            }
                         
-                        }
-                    Text("\(dailyJournal[0].journalInput.count)")
+                        
+                    }
+                    Text("\(filteredJournals[0].journalInput.count)")
                     Text("\(filteredJournals)" as String)
-                    Text("\(dailyJournal[0].journalInput)")
-                 /*   Button("Save") {
-                       // saveCheck = dailyJournal.filter { journal in
-                 //           journal.date.timeIntervalSince(dateSelect) > 84600
-                            // i think it has to do with the number
-                        
-                        if changeCheck.isEmpty {
-                            dailyJournal.append(Journal(date: dateSelect, journalInput: filteredJournals[0].journalInput, feelingsInput: 0))
-                            
-                            // change the value of feelingsInput to the value given by buttonPressed
+                    Button("Save") {
+                        saveCheck = dailyJournal.filter { journal in
+                            journal.date.contains(dateString)
+                        }
+                        if saveCheck.isEmpty {
+                            dailyJournal.append(Journal(date: dateString, journalInput: filteredJournals[0].journalInput, feelingsInput: feeling))
                         } else {
                             for j in dailyJournal {
                                 dateIndex = dailyJournal.firstIndex(of: j)!
-                                if dailyJournal[dateIndex].date == dateSelect {
+                                if dailyJournal[dateIndex].date == dateString {
                                     dailyJournal[dateIndex].journalInput = filteredJournals[0].journalInput
-                                    dailyJournal[dateIndex].feelingsInput = 0
-                                    // change the value of feelingsInput to the value given by buttonPressed
+                                    dailyJournal[dateIndex].feelingsInput = feeling
                                 }
                             }
                         }
-                        }*/
                     }
-
+                    
                 }
+                
+            }
             .navigationTitle("Reflection")
-                   
+            
         }
-        .onChange(of: dailyJournal[0].date) { _ in
-            filteredJournals = dailyJournal.filter { journal in
-                journal.date.timeIntervalSince(dailyJournal[0].date) > 84600
+        .onChange(of: dateSelect) { _ in
+            changeCheck = dailyJournal.filter { journal in
+                journal.date.contains(dateString)
+            }
+            if changeCheck.isEmpty {
+                filteredJournals = [Journal(date: "", journalInput: "", feelingsInput: 0)]
+            } else {
+                filteredJournals = changeCheck
             }
         }
-        .onAppear {
-            dailyJournal[0].date = self.dailyJournal[0].date
-        }
+        
+    }
+    
+    var dateString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYYMMdd"
+        return dateFormatter.string(from: dateSelect)
     }
 }
-        
-    
+
+
 
 struct ReflectionView_Previews: PreviewProvider {
     static var previews: some View {

@@ -11,7 +11,7 @@ struct Journal: Identifiable, Codable, Hashable, Equatable {
     
     var id = UUID()
     
-    var date: Date
+    var date: String
     var journalInput: String
     var feelingsInput: Int
 }
