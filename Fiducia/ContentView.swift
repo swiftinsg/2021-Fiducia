@@ -36,7 +36,7 @@ struct ContentView: View {
                     Label("Progress", systemImage: "chart.xyaxis.line")
                 }
                 .tag(0)
-            TasksView(tasks: .constant([Task(name: "Make a call", difficulty: "1", steps: ["hi"])]), tasksData: TasksData())
+            TasksView(tasks: .constant([Task(name: "Make a call", difficulty: "1", steps: ["hi"])]), tasksData: tasksData)
                 .tabItem {
                     Label("Tasks", systemImage: "checklist")
                     
