@@ -22,6 +22,8 @@ struct FeelingButtonStyle: ButtonStyle {
 
 struct ReflectionView: View {
     
+    @State var goal: String = ""
+    
     @State private var wordCount: Int = 0
     
     @ObservedObject var journalData: JournalData
@@ -62,6 +64,10 @@ struct ReflectionView: View {
                             .padding(30)
                             .onAppear() {
                                 UITextView.appearance().backgroundColor = .clear
+                                
+                            }
+                            .onDisappear() {
+                                journalData.save()
                             }
                         
                         HStack {
