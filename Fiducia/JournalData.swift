@@ -10,6 +10,7 @@ import SwiftUI
 
 class JournalData: ObservableObject {
     @Published var journals: [Journal] = []
+    @Published var goalInput: String = ""
     
     func getArchiveURL() -> URL {
         let plistName = "journal.plist"

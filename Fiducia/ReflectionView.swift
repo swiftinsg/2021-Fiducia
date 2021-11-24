@@ -26,8 +26,6 @@ struct ReflectionView: View {
         UITextView.appearance().backgroundColor = .clear
     }
     
-    @State var goalInput: String = ""
-    
     @State private var wordCount: Int = 0
     
     @ObservedObject var journalData: JournalData
@@ -64,14 +62,14 @@ struct ReflectionView: View {
                                 alignment: .topLeading
                             )
                             .padding(20)
-                        TextEditor(text: $goalInput)
+                        TextEditor(text: $journalData.goalInput)
                             .padding(30)
                         
                         HStack {
                             Spacer()
                             VStack {
                                 Spacer()
-                                Text("\(goalInput.count)/200")
+                                Text("\(journalData.goalInput.count)/200")
                             }
                             .padding(20)
                         }
