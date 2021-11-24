@@ -16,7 +16,7 @@ struct Fiducia: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(tasks: $tasksData.tasks, tasksData: tasksData)
+            ContentView(tasks: $tasksData.tasks, tasksData: tasksData, journalData: journalData)
                 .onAppear {
                     tasksData.load()
                     journalData.load()

@@ -27,6 +27,7 @@ struct ContentView: View {
     
     @Binding var tasks: [Task]
     @ObservedObject var tasksData: TasksData
+    @ObservedObject var journalData: JournalData
     
     @State var selection = 1
     var body: some View {
@@ -42,7 +43,7 @@ struct ContentView: View {
                     
                 }
                 .tag(1)
-            ReflectionView()
+            ReflectionView(journalData: journalData)
                 .tabItem {
                     Label("Reflection", systemImage: "ellipsis.bubble")
                 }
@@ -53,6 +54,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(tasks: .constant([Task(name: "Makec a call", difficulty: "1", steps: ["hi"])]), tasksData: TasksData())
+        ContentView(tasks: .constant([Task(name: "Makec a call", difficulty: "1", steps: ["hi"])]), tasksData: TasksData(), journalData: JournalData())
     }
 }

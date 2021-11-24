@@ -22,10 +22,6 @@ struct FeelingButtonStyle: ButtonStyle {
 
 struct ReflectionView: View {
     
-    init() {
-        UITextView.appearance().backgroundColor = .clear
-    }
-    
     @State private var wordCount: Int = 0
     
     @ObservedObject var journalData: JournalData
@@ -64,6 +60,9 @@ struct ReflectionView: View {
                             .padding(20)
                         TextEditor(text: $journalData.goalInput)
                             .padding(30)
+                            .onAppear() {
+                                UITextView.appearance().backgroundColor = .clear
+                            }
                         
                         HStack {
                             Spacer()
@@ -171,7 +170,10 @@ struct ReflectionView: View {
                             .padding(20)
                         TextEditor(text: $filteredJournals[0].journalInput)
                             .padding(30)
-                        
+                            .background(Color.clear)
+                            .onAppear() {
+                                UITextView.appearance().backgroundColor = .clear
+                            }
                         
                     }
                     Text("Word Count: \(filteredJournals[0].journalInput.count)")
@@ -224,6 +226,6 @@ struct ReflectionView: View {
 
 struct ReflectionView_Previews: PreviewProvider {
     static var previews: some View {
-        ReflectionView()
+        ReflectionView(journalData: JournalData())
     }
 }
