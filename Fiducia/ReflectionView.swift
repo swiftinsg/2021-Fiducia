@@ -176,8 +176,7 @@ struct ReflectionView: View {
                         
                         
                     }
-                    Text("\(filteredJournals[0].journalInput.count)")
-                    Text("\(filteredJournals)" as String)
+                    Text("Word Count: \(filteredJournals[0].journalInput.count)")
                     Button("Save") {
                         saveCheck = dailyJournal.filter { journal in
                             journal.date.contains(dateString)
@@ -207,8 +206,10 @@ struct ReflectionView: View {
             }
             if changeCheck.isEmpty {
                 filteredJournals = [Journal(date: "", journalInput: "", feelingsInput: 0)]
+                feeling = 0
             } else {
                 filteredJournals = changeCheck
+                feeling = filteredJournals[0].feelingsInput
             }
         }
         
