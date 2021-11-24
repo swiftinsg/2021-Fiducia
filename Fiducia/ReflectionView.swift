@@ -23,14 +23,14 @@ struct FeelingButtonStyle: ButtonStyle {
 struct ReflectionView: View {
     
     init() {
-                UITextView.appearance().backgroundColor = .clear
-            }
+        UITextView.appearance().backgroundColor = .clear
+    }
     
     @State var goalInput: String = ""
     
     @State private var wordCount: Int = 0
     
-    @State var dailyJournal = [Journal(date: "", journalInput: "", feelingsInput: 0)]
+    @ObservedObject var journalData: JournalData
     
     @State var filteredJournals: [Journal] = [Journal(date: "", journalInput: "", feelingsInput: 0)]
     
@@ -178,17 +178,17 @@ struct ReflectionView: View {
                     }
                     Text("Word Count: \(filteredJournals[0].journalInput.count)")
                     Button("Save") {
-                        saveCheck = dailyJournal.filter { journal in
+                        saveCheck = journalData.journals.filter { journal in
                             journal.date.contains(dateString)
                         }
                         if saveCheck.isEmpty {
-                            dailyJournal.append(Journal(date: dateString, journalInput: filteredJournals[0].journalInput, feelingsInput: feeling))
+                            journalData.journals.append(Journal(date: dateString, journalInput: filteredJournals[0].journalInput, feelingsInput: feeling))
                         } else {
-                            for j in dailyJournal {
-                                dateIndex = dailyJournal.firstIndex(of: j)!
-                                if dailyJournal[dateIndex].date == dateString {
-                                    dailyJournal[dateIndex].journalInput = filteredJournals[0].journalInput
-                                    dailyJournal[dateIndex].feelingsInput = feeling
+                            for j in journalData.journals {
+                                dateIndex = journalData.journals.firstIndex(of: j)!
+                                if journalData.journals[dateIndex].date == dateString {
+                                    journalData.journals[dateIndex].journalInput = filteredJournals[0].journalInput
+                                    journalData.journals[dateIndex].feelingsInput = feeling
                                 }
                             }
                         }
@@ -201,7 +201,7 @@ struct ReflectionView: View {
             
         }
         .onChange(of: dateSelect) { _ in
-            changeCheck = dailyJournal.filter { journal in
+            changeCheck = journalData.journals.filter { journal in
                 journal.date.contains(dateString)
             }
             if changeCheck.isEmpty {

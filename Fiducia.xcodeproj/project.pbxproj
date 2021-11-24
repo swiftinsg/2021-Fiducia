@@ -25,6 +25,7 @@
 		2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */; };
 		2EA0B03427422C630026B8D3 /* TaskSummarisedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */; };
 		2EBF0A4A27462B8C0073007D /* TasksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF0A4927462B8C0073007D /* TasksData.swift */; };
+		C8EAA314274E1A5200278EC6 /* JournalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAA313274E1A5200278EC6 /* JournalData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailedStepsView.swift; sourceTree = "<group>"; };
 		2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSummarisedStepsView.swift; sourceTree = "<group>"; };
 		2EBF0A4927462B8C0073007D /* TasksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksData.swift; sourceTree = "<group>"; };
+		C8EAA313274E1A5200278EC6 /* JournalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				2EBF0A4927462B8C0073007D /* TasksData.swift */,
 				2E8B0A0A2748FA9400129B11 /* Statistic.swift */,
 				2EA0B02D2742124C0026B8D3 /* ReflectionView.swift */,
+				C8EAA313274E1A5200278EC6 /* JournalData.swift */,
 				2E07B81A2744D165004AA826 /* FeelingsView.swift */,
 				2E8B0A08274747A200129B11 /* Journal.swift */,
 				2EA0B00327420D610026B8D3 /* Assets.xcassets */,
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E07B81B2744D165004AA826 /* FeelingsView.swift in Sources */,
+				C8EAA314274E1A5200278EC6 /* JournalData.swift in Sources */,
 				2EA0B00227420D5E0026B8D3 /* ContentView.swift in Sources */,
 				2EBF0A4A27462B8C0073007D /* TasksData.swift in Sources */,
 				2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */,
