@@ -28,16 +28,17 @@ struct ContentView: View {
     @Binding var tasks: [Task]
     @ObservedObject var tasksData: TasksData
     @ObservedObject var journalData: JournalData
+    @ObservedObject var statisticsData: StatisticsData
     
     @State var selection = 1
     var body: some View {
         TabView(selection: $selection)  {
-            ProgressTabView()
+            ProgressTabView(statisticsData: StatisticsData())
                 .tabItem {
                     Label("Progress", systemImage: "chart.xyaxis.line")
                 }
                 .tag(0)
-            TasksView(tasks: .constant([Task(name: "Make a call", difficulty: "1", steps: ["hi"])]), tasksData: tasksData)
+            TasksView(statistic: .constant(Statistic(numberTasksCompleted: 0, typeTasksCompleted: [""], achievementsCompleted: [""])), tasks: .constant([Task(name: "Make a call", difficulty: "1", steps: ["hi"])]), tasksData: TasksData())
                 .tabItem {
                     Label("Tasks", systemImage: "checklist")
                     
@@ -54,6 +55,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(tasks: .constant([Task(name: "Makec a call", difficulty: "1", steps: ["hi"])]), tasksData: TasksData(), journalData: JournalData())
+        ContentView(tasks: .constant([Task(name: "Makec a call", difficulty: "1", steps: ["hi"])]), tasksData: TasksData(), journalData: JournalData(), statisticsData: StatisticsData())
     }
 }

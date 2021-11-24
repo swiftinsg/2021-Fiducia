@@ -11,7 +11,7 @@ struct Statistic: Identifiable, Codable {
     
     var id = UUID()
     
-    var numberTasksCompletedDaily: Int
+    var numberTasksCompleted: Int
     var typeTasksCompleted: Array<String>
     var achievementsCompleted: Array<String>
 }
