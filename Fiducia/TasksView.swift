@@ -13,6 +13,7 @@ struct TasksView: View {
     
     @State var isEditing = false
 
+
     @Binding var tasks: [Task]
 
     @ObservedObject var tasksData: TasksData //Sets that this is the owner of this var and creates an instance of TaskData()
@@ -29,16 +30,22 @@ struct TasksView: View {
                 if searchText.isEmpty {
                     ForEach($tasksData.tasks) { $task in
                         NavigationLink(destination:
-                                        TaskDetailedStepsView(task: $task))
+                                        TaskDetailedStepsView(task: $task).navigationBarBackButtonHidden(true).navigationBarHidden(true))
                         {
                             HStack {
                                 Text(task.name)
-                                if task.difficulty == "1" {
-                                    Text("⭐")
-                                } else if task.difficulty == "2" {
-                                    Text("⭐⭐")
-                                } else if task.difficulty == "3" {
-                                    Text("⭐⭐⭐")
+                                Spacer()
+                                ZStack {
+                                    if task.difficulty == "1" {
+                                        Text("⭐")
+                                        
+                                    } else if task.difficulty == "2" {
+                                        Text("⭐⭐")
+                                        
+                                    } else if task.difficulty == "3" {
+                                        Text("⭐⭐⭐")
+                                        
+                                    }
                                 }
                             }
                             
@@ -48,6 +55,7 @@ struct TasksView: View {
                             
 
                         }
+                        
                         .swipeActions(edge: .leading) {
                             Button(action: {
                                 self.showSheet.toggle()
@@ -83,6 +91,7 @@ struct TasksView: View {
                     }
                 }
             }
+            .lineLimit(5)
 
             
             .searchable(text: $searchText)

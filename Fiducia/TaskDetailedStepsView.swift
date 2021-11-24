@@ -26,12 +26,47 @@ struct TaskDetailedStepsView: View {
     @State var stepCount = 0
     @State var showSheet = false
     @State var complete = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
             
-        NavigationView {
             
             VStack {
+                
+                HStack {
+                    
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        HStack {
+                            Image(systemName: "chevron.backward")
+                                .font(.system(size: 18, weight: .medium))
+                            Text("Tasks")
+                                .font(.system(size: 20))
+                        }
+                    })
+                    
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    
+                    Button(action: {
+                        self.showSheet.toggle()
+                    }) {
+                        Image(systemName: "list.bullet.rectangle")
+                            .font(.system(size: 20))
+                    }.sheet(isPresented: $showSheet) {
+                        TaskSummarisedStepsView(task: $task)
+                    }
+                }
+                .padding()
+                HStack {
+                Text(task.name)
+                    .font(.system(size: 27))
+                    .font(.headline)
+                    .bold()
+                    .padding()
+                    Spacer()
+                }
                 
                 ProgressView(value: Double(stepCount), total: Double(task.steps.count))
                     .padding(20)
@@ -74,7 +109,7 @@ struct TaskDetailedStepsView: View {
                     } else {
                         Button(action: {
                             stepCount += 1
-                    
+                            
                         }, label: {
                             Text("Complete")
                         })
@@ -87,7 +122,7 @@ struct TaskDetailedStepsView: View {
                 } else {
                     Text("Good job!")
                     Button(action: {
-                        
+                        self.presentationMode.wrappedValue.dismiss()
                         complete = true
                     }, label: {
                         Text("Complete")
@@ -97,21 +132,7 @@ struct TaskDetailedStepsView: View {
                 }
                 Spacer()
             }
-        }
-        .navigationTitle(task.name)
-     //   .navigationBarHidden(true)
         
-        .toolbar {
-            ToolbarItem {
-                Button(action: {
-                    self.showSheet.toggle()
-                }) {
-                    Image(systemName: "list.bullet.rectangle")
-                }.sheet(isPresented: $showSheet) {
-                    TaskSummarisedStepsView(task: $task)
-                }
-            }
-        }
     }
 }
        

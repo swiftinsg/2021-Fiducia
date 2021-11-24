@@ -20,7 +20,9 @@ struct TaskSummarisedStepsView: View {
     var body: some View {
         
         List {
-            ForEach(1..<task.steps.count) { index in
+            TextEditor(text: $task.name)
+            
+            ForEach(1..<task.steps.count + 1) { index in
                 Text("Step \(index)")
                     .bold()
                     .padding()

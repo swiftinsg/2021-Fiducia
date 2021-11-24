@@ -22,7 +22,14 @@ struct NewTaskView: View {
             
                 Section(header: Text("Task Information")) {
                     TextField("Name", text: $task.name)
-                    TextField("Difficulty", text: $task.difficulty)
+                    Picker("Difficulty", selection: $task.difficulty) {
+                        Text("⭐")
+                            .tag("1")
+                        Text("⭐⭐")
+                            .tag("2")
+                        Text("⭐⭐⭐")
+                            .tag("3")
+                    }
                         
                 }
                 Section(header: Text("Task Steps")) {
@@ -36,8 +43,6 @@ struct NewTaskView: View {
                     }
                 }
                 Section {
-                    Text("\(task.name)")
-                    Text("\(task.difficulty)")
                     Button("Save") {
                         tasksData.tasks.append(Task(name: task.name, difficulty: task.difficulty, steps: task.steps))
                         tasksData.save()
