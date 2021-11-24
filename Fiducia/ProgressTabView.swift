@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ProgressTabView: View {
-    @State var statistics = [Statistic(numberTasksCompletedDaily: 0, typeTasksCompleted: [], achievementsCompleted: [])]
+    
+    @ObservedObject var statisticsData: StatisticsData
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
@@ -16,6 +18,6 @@ struct ProgressTabView: View {
 
 struct ProgressTabView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressTabView()
+        ProgressTabView(statisticsData: StatisticsData())
     }
 }

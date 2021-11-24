@@ -12,11 +12,12 @@ struct TasksView: View {
     @State var text = ""
     
     @State var isEditing = false
-
-
+    
+    @Binding var statistic: Statistic
+    
     @Binding var tasks: [Task]
 
-    @ObservedObject var tasksData: TasksData //Sets that this is the owner of this var and creates an instance of TaskData()
+    @ObservedObject var tasksData: TasksData
     
     @State var searchText = ""
     
@@ -114,7 +115,7 @@ struct TasksView: View {
 }
 struct TasksView_Previews: PreviewProvider {
     static var previews: some View {
-        TasksView(tasks: .constant([Task(name: "Make a call", difficulty: "1", steps: ["hi"])]), tasksData: TasksData())
+        TasksView(statistic: .constant(Statistic(numberTasksCompleted: 0, typeTasksCompleted: [""], achievementsCompleted: [""])), tasks: .constant([Task(name: "Make a call", difficulty: "1", steps: ["hi"])]), tasksData: TasksData())
     }
 }
 
