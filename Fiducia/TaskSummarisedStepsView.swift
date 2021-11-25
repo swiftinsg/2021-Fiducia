@@ -47,7 +47,12 @@ struct TaskSummarisedStepsView: View {
             Button(action: {
                 task.steps.append("")
             }) {
-                Image(systemName: "plus")
+                HStack {
+                    Spacer()
+                    Image(systemName: "plus")
+                        .foregroundColor(Color(.systemBlue))
+                    Spacer()
+                }
             }
         }
         .navigationBarHidden(true)

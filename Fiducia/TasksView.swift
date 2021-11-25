@@ -115,7 +115,7 @@ struct TasksView: View {
 }
 struct TasksView_Previews: PreviewProvider {
     static var previews: some View {
-        TasksView(statistic: .constant(Statistic(numberTasksCompleted: 0, typeTasksCompleted: [""], achievementsCompleted: [""])), tasks: .constant([Task(name: "Make a call", difficulty: "1", steps: ["hi"])]), tasksData: TasksData())
+        TasksView(statistic: .constant(Statistic(numberTasksCompleted: 0, typeTasksCompleted: [""], achievementsCompleted: [""])), tasks: .constant([Task(name: "", difficulty: "", steps: [""])]), tasksData: TasksData())
     }
 }
 
