@@ -22,7 +22,10 @@ struct FeelingButtonStyle: ButtonStyle {
 
 struct ReflectionView: View {
     
-    @State var goal: String = ""
+    
+    @Binding var goals: [Goal]
+    
+    @ObservedObject var goalsData: GoalsData
     
     @State private var wordCount: Int = 0
     
@@ -60,21 +63,18 @@ struct ReflectionView: View {
                                 alignment: .topLeading
                             )
                             .padding(20)
-                        TextEditor(text: $journalData.goalInput)
+                        TextEditor(text: $goalsData.goals[0].goalInputString)
                             .padding(30)
                             .onAppear() {
                                 UITextView.appearance().backgroundColor = .clear
                                 
-                            }
-                            .onDisappear() {
-                                journalData.save()
                             }
                         
                         HStack {
                             Spacer()
                             VStack {
                                 Spacer()
-                                Text("\(journalData.goalInput.count)/200")
+                                Text("\(goalsData.goals[0].goalInputString.count)/200")
                             }
                             .padding(20)
                         }
@@ -232,6 +232,6 @@ struct ReflectionView: View {
 
 struct ReflectionView_Previews: PreviewProvider {
     static var previews: some View {
-        ReflectionView(journalData: JournalData())
+        ReflectionView(goals: .constant([Goal(goalInputString: "")]), goalsData: GoalsData(), journalData: JournalData())
     }
 }

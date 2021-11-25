@@ -26,9 +26,11 @@ extension Color {
 struct ContentView: View {
     
     @Binding var tasks: [Task]
+    @Binding var goals: [Goal]
     @ObservedObject var tasksData: TasksData
     @ObservedObject var journalData: JournalData
     @ObservedObject var statisticsData: StatisticsData
+    @ObservedObject var goalsData: GoalsData
     
     @State var selection = 1
     var body: some View {
@@ -44,7 +46,7 @@ struct ContentView: View {
                     
                 }
                 .tag(1)
-            ReflectionView(journalData: journalData)
+            ReflectionView(goals: .constant([Goal(goalInputString: "")]), goalsData: goalsData, journalData: journalData)
                 .tabItem {
                     Label("Reflection", systemImage: "ellipsis.bubble")
                 }
@@ -55,6 +57,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(tasks: .constant([Task(name: "", difficulty: "", steps: [""])]), tasksData: TasksData(), journalData: JournalData(), statisticsData: StatisticsData())
+        ContentView(tasks: .constant([Task(name: "", difficulty: "", steps: [""])]), goals: .constant([Goal(goalInputString: "")]), tasksData: TasksData(), journalData: JournalData(), statisticsData: StatisticsData(), goalsData: GoalsData())
     }
 }
