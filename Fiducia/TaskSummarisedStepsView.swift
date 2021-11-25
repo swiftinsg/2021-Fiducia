@@ -15,6 +15,9 @@ struct TaskSummarisedStepsView: View {
     
     @State var newStep: String = ""
     
+    @State var presentAlert = false
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     
     var body: some View {
@@ -54,7 +57,24 @@ struct TaskSummarisedStepsView: View {
                     Spacer()
                 }
             }
+            Button(action: {
+                self.presentAlert.toggle()
+            }) {
+                HStack {
+                    Spacer()
+                    Text("Delete task")
+                        .foregroundColor(Color(.systemRed))
+                    Spacer()
+                }
+            }
         }
+        .alert("Are you sure you want to delete task?", isPresented: $presentAlert, actions: {
+            Button("Destructive", role: .destructive, action: {
+                presentationMode.wrappedValue.dismiss()
+            })
+        }, message: {
+           // Text("Message")
+        })
         .navigationBarHidden(true)
             
             

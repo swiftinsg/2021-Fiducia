@@ -26,7 +26,6 @@ struct TasksView: View {
     @State var isSheetPresented = false
     var body: some View {
         NavigationView {
-            
             List {
                 if searchText.isEmpty {
                     ForEach($tasksData.tasks) { $task in
