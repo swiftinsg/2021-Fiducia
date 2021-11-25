@@ -26,6 +26,8 @@
 		2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */; };
 		2EA0B03427422C630026B8D3 /* TaskSummarisedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */; };
 		2EBF0A4A27462B8C0073007D /* TasksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF0A4927462B8C0073007D /* TasksData.swift */; };
+		2EF8458E274F4145004536CF /* GoalStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8458D274F4145004536CF /* GoalStuff.swift */; };
+		2EF84590274F4153004536CF /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8458F274F4153004536CF /* Goals.swift */; };
 		C8EAA314274E1A5200278EC6 /* JournalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAA313274E1A5200278EC6 /* JournalData.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailedStepsView.swift; sourceTree = "<group>"; };
 		2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSummarisedStepsView.swift; sourceTree = "<group>"; };
 		2EBF0A4927462B8C0073007D /* TasksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksData.swift; sourceTree = "<group>"; };
+		2EF8458D274F4145004536CF /* GoalStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStuff.swift; sourceTree = "<group>"; };
+		2EF8458F274F4153004536CF /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
 		C8EAA313274E1A5200278EC6 /* JournalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +131,8 @@
 				2E88B8CA274E3C3C00952C1C /* StatisticsData.swift */,
 				2EA0B0292742120B0026B8D3 /* TasksView.swift */,
 				2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */,
+				2EF8458D274F4145004536CF /* GoalStuff.swift */,
+				2EF8458F274F4153004536CF /* Goals.swift */,
 				2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */,
 				2E4BE6AC274BA0E0003ECCB3 /* NewTaskView.swift */,
 				2EA0B02F274214A20026B8D3 /* Task.swift */,
@@ -301,6 +307,8 @@
 				2EA0B00227420D5E0026B8D3 /* ContentView.swift in Sources */,
 				2E88B8CB274E3C3C00952C1C /* StatisticsData.swift in Sources */,
 				2EBF0A4A27462B8C0073007D /* TasksData.swift in Sources */,
+				2EF84590274F4153004536CF /* Goals.swift in Sources */,
+				2EF8458E274F4145004536CF /* GoalStuff.swift in Sources */,
 				2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */,
 				2EA0B02E2742124C0026B8D3 /* ReflectionView.swift in Sources */,
 				2EA0B02C2742121B0026B8D3 /* ProgressTabView.swift in Sources */,
