@@ -10,8 +10,8 @@ import SwiftUI
 struct FeelingButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 25))
-            .frame(width: 25)
+            .font(.system(size: 21))
+            .frame(width: 21)
             .padding()
     }
     
@@ -148,6 +148,8 @@ struct ReflectionView: View {
                                 maxHeight: .infinity,
                                 alignment: .topLeading
                             )
+                            .padding(4.5)
+                            
                         
                         
                         HStack {
@@ -161,6 +163,7 @@ struct ReflectionView: View {
                             .background(feeling == 1 ? (colorScheme == .dark ? Color.darkAquaBlue : Color.lightAquaBlue) : (colorScheme == .dark ? Color.darkGrey : Color.lightGrey))
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
+                            
                             Button("):") {
                                 feeling = 2
                                 
@@ -170,6 +173,7 @@ struct ReflectionView: View {
                             .background(feeling == 2 ? (colorScheme == .dark ? Color.darkAquaBlue : Color.lightAquaBlue) : (colorScheme == .dark ? Color.darkGrey : Color.lightGrey))
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
+                            
                             Button(":/") {
                                 feeling = 3
                                 
@@ -189,6 +193,7 @@ struct ReflectionView: View {
                             .background(feeling == 4 ? (colorScheme == .dark ? Color.darkAquaBlue : Color.lightAquaBlue) : (colorScheme == .dark ? Color.darkGrey : Color.lightGrey))
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
+                            
                             Button(":D") {
                                 feeling = 5
                                 
@@ -203,9 +208,9 @@ struct ReflectionView: View {
                         
                         
                     }
-                    .padding(.leading)
-                    .padding(.trailing)
-                    .padding(.bottom)
+                    .padding(1)
+                    .padding(.leading, 1)
+                    .padding(.trailing, 1)
                     
                     
                     HStack {
