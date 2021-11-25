@@ -11,6 +11,8 @@ struct TaskSummarisedStepsView: View {
     
     @Binding var task: Task
     
+    @ObservedObject var tasksData: TasksData 
+    
     @State var text = ""
     
     @State var newStep: String = ""
@@ -69,8 +71,11 @@ struct TaskSummarisedStepsView: View {
             }
         }
         .alert("Are you sure you want to delete task?", isPresented: $presentAlert, actions: {
-            Button("Destructive", role: .destructive, action: {
+            Button("Delete", role: .destructive, action: {
                 presentationMode.wrappedValue.dismiss()
+                if let delete = tasksData.tasks.firstIndex(of: task) {
+                    tasksData.tasks.remove(at: delete)
+                }
             })
         }, message: {
            // Text("Message")
@@ -84,7 +89,7 @@ struct TaskSummarisedStepsView: View {
 }
 struct TaskSummarisedStepsView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskSummarisedStepsView(task: .constant(Task(name: "Make a call", difficulty: "1", steps: ["hi"])))
+        TaskSummarisedStepsView(task: .constant(Task(name: "Make a call", difficulty: "1", steps: ["hi"])), tasksData: TasksData())
     }
 }
 

@@ -23,6 +23,7 @@ struct NextButtonStyle: ButtonStyle {
 struct TaskDetailedStepsView: View {
     
     @Binding var task: Task
+    @ObservedObject var tasksData: TasksData
     @State var stepCount = 0
     @State var showSheet = false
     
@@ -55,7 +56,7 @@ struct TaskDetailedStepsView: View {
                         Image(systemName: "list.bullet.rectangle")
                             .font(.system(size: 20))
                     }.sheet(isPresented: $showSheet) {
-                        TaskSummarisedStepsView(task: $task)
+                        TaskSummarisedStepsView(task: $task, tasksData: tasksData)
                     }
                 }
                 .padding()
@@ -186,6 +187,6 @@ struct TaskDetailedStepsView: View {
 
 struct TaskDetailedStepsView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskDetailedStepsView(task: .constant(Task(name: "", difficulty: "", steps: [""])))
+        TaskDetailedStepsView(task: .constant(Task(name: "", difficulty: "", steps: [""])), tasksData: TasksData())
     }
 }

@@ -30,7 +30,7 @@ struct TasksView: View {
                 if searchText.isEmpty {
                     ForEach($tasksData.tasks) { $task in
                         NavigationLink(destination:
-                                        TaskDetailedStepsView(task: $task).navigationBarBackButtonHidden(true).navigationBarHidden(true))
+                                        TaskDetailedStepsView(task: $task, tasksData: tasksData).navigationBarBackButtonHidden(true).navigationBarHidden(true))
                         {
                             HStack {
                                 Text(task.name)
@@ -50,7 +50,7 @@ struct TasksView: View {
                             }
                             
                                 .sheet(isPresented: $showSheet) {
-                                    TaskSummarisedStepsView(task: $task)
+                                    TaskSummarisedStepsView(task: $task, tasksData: tasksData)
                                 }
                             
 
@@ -73,7 +73,7 @@ struct TasksView: View {
                     ForEach(tasks) { task in
                         let taskIndex = tasksData.tasks.firstIndex(of: task)!
                         NavigationLink(destination:
-                                        TaskDetailedStepsView(task: $tasksData.tasks[taskIndex]))
+                                        TaskDetailedStepsView(task: $tasksData.tasks[taskIndex], tasksData: tasksData))
                         {
                             HStack {
                                 Text(task.name)
