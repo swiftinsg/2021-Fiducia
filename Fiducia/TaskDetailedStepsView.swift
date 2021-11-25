@@ -33,128 +33,66 @@ struct TaskDetailedStepsView: View {
     
     var body: some View {
             
-            
-            VStack {
+        VStack {
                 
-                HStack {
+            HStack {
                     
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        HStack {
-                            Image(systemName: "chevron.backward")
-                                .font(.system(size: 18, weight: .medium))
-                            Text("Tasks")
-                                .font(.system(size: 20))
-                        }
-                    })
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
                     
-                    Spacer()
-                        .frame(maxWidth: .infinity)
-                    
-                    Button(action: {
-                        self.showSheet.toggle()
-                    }) {
-                        Image(systemName: "list.bullet.rectangle")
+                }, label: {
+                    HStack {
+                        Image(systemName: "chevron.backward")
+                            .font(.system(size: 18, weight: .medium))
+                        Text("Tasks")
                             .font(.system(size: 20))
-                    }.sheet(isPresented: $showSheet) {
-                        TaskSummarisedStepsView(task: $task, tasksData: tasksData)
+                        
                     }
+                    
+                })
+                    
+                Spacer()
+                    .frame(maxWidth: .infinity)
+                    
+                Button(action: {
+                    self.showSheet.toggle()
+                    
+                }) {
+                    Image(systemName: "list.bullet.rectangle")
+                        .font(.system(size: 20))
+                    
+                }.sheet(isPresented: $showSheet) {
+                    TaskSummarisedStepsView(task: $task, tasksData: tasksData)
+                    
                 }
-                .padding()
-                HStack {
+                
+            }
+            .padding()
+            HStack {
                 Text(task.name)
                     .font(.system(size: 27))
                     .font(.headline)
                     .bold()
                     .padding()
-                    Spacer()
-                }
+                Spacer()
                 
-                if task.steps.count >= 1 {
-                    ProgressView(value: Double(stepCount), total: Double(task.steps.count))
-                        .padding(20)
-                    if stepCount + 1 <= task.steps.count {
+            }
                 
-                        RoundedRectangle(cornerRadius: 25, style: .continuous)
-                            .fill(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
-                            .frame(
-                                maxWidth: .infinity,
-                                maxHeight: .infinity
-                        
-                            )
-                            .overlay(
-                                ScrollView {
-                                    Text(task.steps[stepCount])
-                                        .font(.system(size: 30))
-                                        .frame(
-                                            maxWidth: .infinity,
-                                            maxHeight: .infinity,
-                                            alignment: .topLeading
-                                        )
-                                        .padding(30)
-                                    
-                                }
-                            )
-                            .padding(20)
-                        Spacer()
-                        if stepCount + 1 < task.steps.count {
-                            Button(action: {
-                                stepCount += 1
+            if task.steps.count >= 1 {
+                ProgressView(value: Double(stepCount), total: Double(task.steps.count))
+                    .padding(20)
+                if stepCount + 1 <= task.steps.count {
+                    
+                    RoundedRectangle(cornerRadius: 25, style: .continuous)
+                        .fill(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
+                        .frame(
+                            maxWidth: .infinity,
+                            maxHeight: .infinity
                             
-                            }, label: {
-                                HStack {
-                                    Text("Next")
-                                    Image(systemName: "chevron.forward")
-                                    
-                                }
-                                
-                            })
-                                .buttonStyle(NextButtonStyle())
-                                .padding()
-                        
-                        } else {
-                            Button(action: {
-                                stepCount += 1
-                                
-                            }, label: {
-                                Text("Complete")
-                                
-                            })
-                                .buttonStyle(NextButtonStyle())
-                                .padding()
-                            
-                        }
-                        
-                        Spacer()
-                
-                    } else {
-                        Text("Good job!")
-                            .font(.system(size: 40))
-                            .font(.headline)
-                        Button(action: {
-                            self.presentationMode.wrappedValue.dismiss()
-                            
-                        }, label: {
-                            Text("Complete")
-                            
-                        })
-                            .buttonStyle(NextButtonStyle())
-                            .padding()
-                        
-                    }
-                } else {
-                    VStack {
-                        RoundedRectangle(cornerRadius: 25, style: .continuous)
-                            .fill(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
-                            .frame(
-                                maxWidth: .infinity,
-                                maxHeight: .infinity
-                        
-                            )
-                            .overlay(
-                                Text("There are no steps in this task. Would you like to add steps?")
-                                    .font(.title)
+                        )
+                        .overlay(
+                            ScrollView {
+                                Text(task.steps[stepCount])
                                     .font(.system(size: 30))
                                     .frame(
                                         maxWidth: .infinity,
@@ -163,28 +101,100 @@ struct TaskDetailedStepsView: View {
                                     )
                                     .padding(30)
                                     
-                            )
-                        
-                        
-                            .padding(20)
+                            }
+                        )
+                        .padding(20)
+                    Spacer()
+                    if stepCount + 1 < task.steps.count {
                         Button(action: {
-                            self.showSheet.toggle()
+                            stepCount += 1
+                            
                         }, label: {
-                            Text("Add steps")
+                            HStack {
+                                Text("Next")
+                                Image(systemName: "chevron.forward")
                                 
-                        
+                            }
+                                
                         })
                             .buttonStyle(NextButtonStyle())
-                            .padding(30)
+                            .padding()
+                        
+                    } else {
+                        Button(action: {
+                            stepCount += 1
+                                
+                        }, label: {
+                            Text("Complete")
+                                
+                        })
+                            .buttonStyle(NextButtonStyle())
+                            .padding()
+                            
+                    }
+                        
+                    Spacer()
+                
+                } else {
+                    Text("Good job!")
+                        .font(.system(size: 40))
+                        .font(.headline)
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                            
+                    }, label: {
+                        Text("Complete")
+                            
+                    })
+                        .buttonStyle(NextButtonStyle())
+                        .padding()
+                        
+                
+                }
+                
+            } else {
+                VStack {
+                    RoundedRectangle(cornerRadius: 25, style: .continuous)
+                        .fill(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
+                        .frame(
+                            maxWidth: .infinity,
+                            maxHeight: .infinity
+                            
+                        )
+                        .overlay(
+                            Text("There are no steps in this task. Would you like to add steps?")
+                                .font(.title)
+                                .font(.system(size: 30))
+                                .frame(
+                                    maxWidth: .infinity,
+                                    maxHeight: .infinity,
+                                    alignment: .topLeading
+                                )
+                                .padding(30)
+                            
+                        )
+                        .padding(20)
+                    Button(action: {
+                        self.showSheet.toggle()
+                        
+                    }, label: {
+                            Text("Add steps")
+                        
+                        
+                    })
+                        .buttonStyle(NextButtonStyle())
+                        .padding(30)
                     
                 
-                    }
-                    
                 }
-                Spacer()
+                    
             }
+            Spacer()
+            
+        }
         
     }
+    
 }
        
      

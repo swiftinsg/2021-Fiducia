@@ -29,102 +29,102 @@ struct TasksView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-            LazyVStack {
-                if searchText.isEmpty {
-                    ForEach($tasksData.tasks) { $task in
-                        NavigationLink(destination:
-                                        TaskDetailedStepsView(task: $task, tasksData: tasksData).navigationBarBackButtonHidden(true).navigationBarHidden(true))
-                        {
-                            HStack {
-                                Text(task.name)
-                                    .multilineTextAlignment(.leading)
-                                    .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
-                                Spacer()
-                                ZStack {
-                                    if task.difficulty == "1" {
-                                        Text("⭐")
-                                        
-                                    } else if task.difficulty == "2" {
-                                        Text("⭐⭐")
-                                        
-                                    } else if task.difficulty == "3" {
-                                        Text("⭐⭐⭐")
-                                        
+                LazyVStack {
+                    if searchText.isEmpty {
+                        ForEach($tasksData.tasks) { $task in
+                            NavigationLink(destination:
+                                            TaskDetailedStepsView(task: $task, tasksData: tasksData).navigationBarBackButtonHidden(true).navigationBarHidden(true))
+                            {
+                                HStack {
+                                    Text(task.name)
+                                        .multilineTextAlignment(.leading)
+                                        .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+                                    Spacer()
+                                    ZStack {
+                                        if task.difficulty == "1" {
+                                            Text("⭐")
+                                            
+                                        } else if task.difficulty == "2" {
+                                            Text("⭐⭐")
+                                            
+                                        } else if task.difficulty == "3" {
+                                            Text("⭐⭐⭐")
+                                            
+                                        }
                                     }
+                                    Image(systemName: "chevron.forward")
+                                        .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                                 }
-                                Image(systemName: "chevron.forward")
-                                    .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
-                            }
-
-                            .padding(30)
-                            .background(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
-                            .cornerRadius(15)
-                            .padding(.leading, 15)
-                            .padding(.trailing, 15)
-                            .padding(.bottom, 15)
-                            
+                                
+                                .padding(30)
+                                .background(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
+                                .cornerRadius(15)
+                                .padding(.leading, 15)
+                                .padding(.trailing, 15)
+                                .padding(.bottom, 15)
+                                
                                 .sheet(isPresented: $showSheet) {
                                     TaskSummarisedStepsView(task: $task, tasksData: tasksData)
                                 }
-                            
-
-                        }
-                        
-                        .swipeActions(edge: .leading) {
-                            Button(action: {
-                                self.showSheet.toggle()
-                            }) {
-                                Image(systemName: "list.bullet.rectangle")
+                                
+                                
                             }
-                        }
-                    }
-
-                } else {
-                    let tasks = tasksData.tasks.filter { task in
-                        task.name.lowercased().contains(searchText.lowercased())
-            
-                    }
-                    ForEach(tasks) { task in
-                        let taskIndex = tasksData.tasks.firstIndex(of: task)!
-                        NavigationLink(destination:
-                                        TaskDetailedStepsView(task: $tasksData.tasks[taskIndex], tasksData: tasksData))
-                        {
-                            HStack {
-                                Text(task.name)
-                                    .multilineTextAlignment(.leading)
-                                    .foregroundColor(.black)
-                                Spacer()
-                                if task.difficulty == "1" {
-                                    Text("⭐")
-                                } else if task.difficulty == "2" {
-                                    Text("⭐⭐")
-                                } else if task.difficulty == "3" {
-                                    Text("⭐⭐⭐")
+                            
+                            .swipeActions(edge: .leading) {
+                                Button(action: {
+                                    self.showSheet.toggle()
+                                }) {
+                                    Image(systemName: "list.bullet.rectangle")
                                 }
                             }
-                            .padding(20)
-                            .background(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
-                            .cornerRadius(15)
-                            .padding(5)
-                                                            
                         }
                         
+                    } else {
+                        let tasks = tasksData.tasks.filter { task in
+                            task.name.lowercased().contains(searchText.lowercased())
+                            
+                        }
+                        ForEach(tasks) { task in
+                            let taskIndex = tasksData.tasks.firstIndex(of: task)!
+                            NavigationLink(destination:
+                                            TaskDetailedStepsView(task: $tasksData.tasks[taskIndex], tasksData: tasksData))
+                            {
+                                HStack {
+                                    Text(task.name)
+                                        .multilineTextAlignment(.leading)
+                                        .foregroundColor(.black)
+                                    Spacer()
+                                    if task.difficulty == "1" {
+                                        Text("⭐")
+                                    } else if task.difficulty == "2" {
+                                        Text("⭐⭐")
+                                    } else if task.difficulty == "3" {
+                                        Text("⭐⭐⭐")
+                                    }
+                                }
+                                .padding(20)
+                                .background(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
+                                .cornerRadius(15)
+                                .padding(5)
+                                
+                            }
+                            
+                        }
                     }
                 }
-            }
-
-            
-            .searchable(text: $searchText)
-            .navigationTitle("Tasks")
-            .toolbar {
-                ToolbarItem {
-                    Button(action: {
-                        self.isSheetPresented.toggle()
-                    }) {
-                        Image(systemName: "plus")
+                
+                
+                .searchable(text: $searchText)
+                .navigationTitle("Tasks")
+                .toolbar {
+                    ToolbarItem {
+                        Button(action: {
+                            self.isSheetPresented.toggle()
+                        }) {
+                            Image(systemName: "plus")
+                        }
                     }
                 }
-            }
             }
             
         }
