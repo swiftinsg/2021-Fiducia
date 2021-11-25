@@ -11,7 +11,6 @@ struct FeelingButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.system(size: 25))
-            .foregroundColor(.black)
             .frame(width: 25)
             .padding()
     }
@@ -22,6 +21,7 @@ struct FeelingButtonStyle: ButtonStyle {
 
 struct ReflectionView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     
     @Binding var goals: [Goal]
     
@@ -45,11 +45,14 @@ struct ReflectionView: View {
     
     @State var feeling: Int = 0
     
+    @State var saveAlert = false
+    
     @State private var dateSelect = Date()
     
     var body: some View {
         NavigationView {
             ScrollView {
+                
                 VStack {
                     Spacer()
                     HStack {
@@ -57,6 +60,7 @@ struct ReflectionView: View {
                             Spacer()
                             Text("My personal goal:")
                                 .font(.title2)
+                                .padding()
                         }
                         Spacer()
                     }
@@ -64,15 +68,13 @@ struct ReflectionView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 25, style:
                                                 .continuous)
-                            .fill(Color.lightBlue)
+                            .fill(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
                             .frame(height: 170).frame(
                                 maxWidth: .infinity,
                                 maxHeight: .infinity,
                                 alignment: .topLeading
                             )
                         
-                            .padding(.leading, 20)
-                            .padding(.trailing, 20)
                             .overlay(
                                 HStack {
                                     Spacer()
@@ -106,9 +108,12 @@ struct ReflectionView: View {
                         
 
                     }
+                    .padding(.trailing)
+                    .padding(.leading)
+                    .padding(.bottom)
                     
                     Spacer()
-                        .padding()
+                        .padding(.bottom)
                     
                     
                     DatePicker (
@@ -128,6 +133,7 @@ struct ReflectionView: View {
                             Spacer()
                             Text("How am I feeling today?")
                                 .font(.title2)
+                                .padding()
                         }
                         Spacer()
                     }
@@ -136,13 +142,13 @@ struct ReflectionView: View {
                         
                         RoundedRectangle(cornerRadius: 10, style:
                                                 .continuous)
-                            .fill(Color.lightBlue)
+                            .fill(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
                             .frame(height: 85).frame(
                                 maxWidth: .infinity,
                                 maxHeight: .infinity,
                                 alignment: .topLeading
                             )
-                            
+                        
                         
                         HStack {
                             
@@ -151,54 +157,55 @@ struct ReflectionView: View {
                                 feeling = 1
                             }
                             .rotationEffect(Angle(degrees: -90))
-                            .background(feeling == 1 ? Color.aquaBlue : Color.lightGrey)
+                            .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+                            .background(feeling == 1 ? (colorScheme == .dark ? Color.darkAquaBlue : Color.lightAquaBlue) : (colorScheme == .dark ? Color.darkGrey : Color.lightGrey))
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
-                            .padding(5)
                             Button("):") {
                                 feeling = 2
                                 
                             }
                             .rotationEffect(Angle(degrees: -90))
-                            .background(feeling == 2 ? Color.aquaBlue : Color.lightGrey)
+                            .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+                            .background(feeling == 2 ? (colorScheme == .dark ? Color.darkAquaBlue : Color.lightAquaBlue) : (colorScheme == .dark ? Color.darkGrey : Color.lightGrey))
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
-                            .padding(5)
                             Button(":/") {
                                 feeling = 3
                                 
                             }
                             .rotationEffect(Angle(degrees: 90))
-                            .background(feeling == 3 ? Color.aquaBlue : Color.lightGrey)
+                            .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+                            .background(feeling == 3 ? (colorScheme == .dark ? Color.darkAquaBlue : Color.lightAquaBlue) : (colorScheme == .dark ? Color.darkGrey : Color.lightGrey))
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
-                            .padding(5)
                             
                             Button(":)") {
                                 feeling = 4
                                 
                             }
                             .rotationEffect(Angle(degrees: 90))
-                            .background(feeling == 4 ? Color.aquaBlue : Color.lightGrey)
+                            .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+                            .background(feeling == 4 ? (colorScheme == .dark ? Color.darkAquaBlue : Color.lightAquaBlue) : (colorScheme == .dark ? Color.darkGrey : Color.lightGrey))
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
-                            .padding(5)
                             Button(":D") {
                                 feeling = 5
                                 
                             }
                             .rotationEffect(Angle(degrees: 90))
-                            .background(feeling == 5 ? Color.aquaBlue : Color.lightGrey)
+                            .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+                            .background(feeling == 5 ? (colorScheme == .dark ? Color.darkAquaBlue : Color.lightAquaBlue) : (colorScheme == .dark ? Color.darkGrey : Color.lightGrey))
                             .buttonStyle(FeelingButtonStyle())
                             .clipShape(Circle())
-                            .padding(5)
+                            
                         }
                         
                         
                     }
-                    .padding(.leading, 20)
-                    .padding(.trailing, 20)
-                    .padding(.bottom, 20)
+                    .padding(.leading)
+                    .padding(.trailing)
+                    .padding(.bottom)
                     
                     
                     HStack {
@@ -206,6 +213,7 @@ struct ReflectionView: View {
                             Spacer()
                             Text("Today's journal:")
                                 .font(.title2)
+                                .padding(.leading)
                         }
                         Spacer()
                     }
@@ -214,15 +222,12 @@ struct ReflectionView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 25, style:
                                                 .continuous)
-                            .fill(Color.lightBlue)
+                            .fill(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
                             .frame(height: 250).frame(
                                 maxWidth: .infinity,
                                 maxHeight: .infinity,
                                 alignment: .topLeading
                             )
-                            .padding(.leading, 20)
-                            .padding(.trailing, 20)
-                            .padding(.bottom, 20)
                         TextEditor(text: $filteredJournals[0].journalInput)
                             .padding(30)
                             .background(Color.clear)
@@ -231,7 +236,11 @@ struct ReflectionView: View {
                             }
                         
                     }
+                    .padding(.leading)
+                    .padding(.trailing)
+                    .padding(.bottom)
                     Button("Save") {
+                        self.saveAlert.toggle()
                         saveCheck = journalData.journals.filter { journal in
                             journal.date.contains(dateString)
                         }
@@ -247,14 +256,16 @@ struct ReflectionView: View {
                             }
                         }
                     }
+                    .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                     .padding()
-                    .background(Color.lightGrey)
+                    .background(colorScheme == .dark ? Color.darkGrey : Color.lightGrey)
                     .foregroundColor(.black)
                     .cornerRadius(15)
                     
                 }
                 
             }
+            .alert("Your input was successfully saved!", isPresented: $saveAlert, actions: {})
             .navigationTitle("Reflection")
             
         }

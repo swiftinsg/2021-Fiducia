@@ -7,12 +7,13 @@
 import SwiftUI
 
 struct NextButtonStyle: ButtonStyle {
+    @Environment(\.colorScheme) var colorScheme
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding()
             .font(.system(size: 25))
-            .background(Color.lightGrey)
-            .foregroundColor(.black)
+            .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+            .background(colorScheme == .dark ? Color.darkGrey : Color.lightGrey)
             .cornerRadius(15)
             .scaleEffect(configuration.isPressed ? 1.1 : 1.0)
         
@@ -23,6 +24,7 @@ struct NextButtonStyle: ButtonStyle {
 struct TaskDetailedStepsView: View {
     
     @Binding var task: Task
+    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var tasksData: TasksData
     @State var stepCount = 0
     @State var showSheet = false
@@ -75,7 +77,7 @@ struct TaskDetailedStepsView: View {
                     if stepCount + 1 <= task.steps.count {
                 
                         RoundedRectangle(cornerRadius: 25, style: .continuous)
-                            .fill(Color.lightBlue)
+                            .fill(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
                             .frame(
                                 maxWidth: .infinity,
                                 maxHeight: .infinity
@@ -103,7 +105,7 @@ struct TaskDetailedStepsView: View {
                             }, label: {
                                 HStack {
                                     Text("Next")
-                                    Image(systemName: "arrow.right")
+                                    Image(systemName: "chevron.forward")
                                     
                                 }
                                 
@@ -128,6 +130,8 @@ struct TaskDetailedStepsView: View {
                 
                     } else {
                         Text("Good job!")
+                            .font(.system(size: 40))
+                            .font(.headline)
                         Button(action: {
                             self.presentationMode.wrappedValue.dismiss()
                             
@@ -142,7 +146,7 @@ struct TaskDetailedStepsView: View {
                 } else {
                     VStack {
                         RoundedRectangle(cornerRadius: 25, style: .continuous)
-                            .fill(Color.lightBlue)
+                            .fill(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
                             .frame(
                                 maxWidth: .infinity,
                                 maxHeight: .infinity

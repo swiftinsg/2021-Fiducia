@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TasksView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @State var text = ""
     
     @State var isEditing = false
@@ -36,7 +38,7 @@ struct TasksView: View {
                             HStack {
                                 Text(task.name)
                                     .multilineTextAlignment(.leading)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                                 Spacer()
                                 ZStack {
                                     if task.difficulty == "1" {
@@ -51,11 +53,11 @@ struct TasksView: View {
                                     }
                                 }
                                 Image(systemName: "chevron.forward")
-                                    .foregroundColor(.black)
+                                    .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                             }
 
                             .padding(30)
-                            .background(Color.lightBlue)
+                            .background(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
                             .cornerRadius(15)
                             .padding(.leading, 15)
                             .padding(.trailing, 15)
@@ -101,7 +103,7 @@ struct TasksView: View {
                                 }
                             }
                             .padding(20)
-                            .background(Color.lightBlue)
+                            .background(colorScheme == .dark ? Color.darkBlue : Color.lightBlue)
                             .cornerRadius(15)
                             .padding(5)
                                                             

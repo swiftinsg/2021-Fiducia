@@ -20,7 +20,7 @@ struct TaskSummarisedStepsView: View {
     @State var presentAlert = false
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+
     
     var body: some View {
         NavigationView {
