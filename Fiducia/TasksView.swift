@@ -26,7 +26,8 @@ struct TasksView: View {
     @State var isSheetPresented = false
     var body: some View {
         NavigationView {
-            List {
+            ScrollView {
+            LazyVStack {
                 if searchText.isEmpty {
                     ForEach($tasksData.tasks) { $task in
                         NavigationLink(destination:
@@ -34,6 +35,8 @@ struct TasksView: View {
                         {
                             HStack {
                                 Text(task.name)
+                                    .multilineTextAlignment(.leading)
+                                    .foregroundColor(.black)
                                 Spacer()
                                 ZStack {
                                     if task.difficulty == "1" {
@@ -47,7 +50,16 @@ struct TasksView: View {
                                         
                                     }
                                 }
+                                Image(systemName: "chevron.forward")
+                                    .foregroundColor(.black)
                             }
+
+                            .padding(30)
+                            .background(Color.lightBlue)
+                            .cornerRadius(15)
+                            .padding(.leading, 15)
+                            .padding(.trailing, 15)
+                            .padding(.bottom, 15)
                             
                                 .sheet(isPresented: $showSheet) {
                                     TaskSummarisedStepsView(task: $task, tasksData: tasksData)
@@ -77,6 +89,9 @@ struct TasksView: View {
                         {
                             HStack {
                                 Text(task.name)
+                                    .multilineTextAlignment(.leading)
+                                    .foregroundColor(.black)
+                                Spacer()
                                 if task.difficulty == "1" {
                                     Text("⭐")
                                 } else if task.difficulty == "2" {
@@ -85,13 +100,16 @@ struct TasksView: View {
                                     Text("⭐⭐⭐")
                                 }
                             }
+                            .padding(20)
+                            .background(Color.lightBlue)
+                            .cornerRadius(15)
+                            .padding(5)
                                                             
                         }
                         
                     }
                 }
             }
-            .lineLimit(5)
 
             
             .searchable(text: $searchText)
@@ -104,6 +122,7 @@ struct TasksView: View {
                         Image(systemName: "plus")
                     }
                 }
+            }
             }
             
         }
