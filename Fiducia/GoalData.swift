@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-//change Friend/Friends and friend/friends -> Journal and journal/journalInput
+//change Friend/Friends and friend/friends -> Goal and goal/goalInput
 
 class FriendsData: ObservableObject {
     @Published var friends: [Friend] = []
