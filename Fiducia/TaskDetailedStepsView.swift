@@ -67,10 +67,11 @@ struct TaskDetailedStepsView: View {
                 }
                 
             }
-            .padding()
+            .padding(.trailing)
+            .padding(.leading)
             HStack {
                 Text(task.name)
-                    .font(.system(size: 27))
+                    .font(.system(size: 25))
                     .font(.headline)
                     .bold()
                     .padding()
@@ -80,7 +81,7 @@ struct TaskDetailedStepsView: View {
                 
             if task.steps.count >= 1 {
                 ProgressView(value: Double(stepCount), total: Double(task.steps.count))
-                    .padding(20)
+                    .padding()
                 if stepCount + 1 <= task.steps.count {
                     
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
@@ -93,7 +94,7 @@ struct TaskDetailedStepsView: View {
                         .overlay(
                             ScrollView {
                                 Text(task.steps[stepCount])
-                                    .font(.system(size: 30))
+                                    .font(.system(size: 25))
                                     .frame(
                                         maxWidth: .infinity,
                                         maxHeight: .infinity,
@@ -133,7 +134,6 @@ struct TaskDetailedStepsView: View {
                             
                     }
                         
-                    Spacer()
                 
                 } else {
                     Text("Good job!")
