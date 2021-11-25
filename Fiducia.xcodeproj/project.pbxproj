@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E07B81B2744D165004AA826 /* FeelingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E07B81A2744D165004AA826 /* FeelingsView.swift */; };
 		2E4BE6AD274BA0E0003ECCB3 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BE6AC274BA0E0003ECCB3 /* NewTaskView.swift */; };
 		2E88B8CB274E3C3C00952C1C /* StatisticsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B8CA274E3C3C00952C1C /* StatisticsData.swift */; };
+		2E88B8CD274F44C500952C1C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B8CC274F44C500952C1C /* Goal.swift */; };
+		2E88B8CF274F451000952C1C /* GoalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B8CE274F451000952C1C /* GoalData.swift */; };
 		2E8B0A09274747A200129B11 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B0A08274747A200129B11 /* Journal.swift */; };
 		2E8B0A0B2748FA9400129B11 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B0A0A2748FA9400129B11 /* Statistic.swift */; };
 		2EA0B00027420D5E0026B8D3 /* FiduciaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0AFFF27420D5E0026B8D3 /* FiduciaApp.swift */; };
@@ -26,8 +27,6 @@
 		2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */; };
 		2EA0B03427422C630026B8D3 /* TaskSummarisedStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */; };
 		2EBF0A4A27462B8C0073007D /* TasksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF0A4927462B8C0073007D /* TasksData.swift */; };
-		2EF8458E274F4145004536CF /* GoalStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8458D274F4145004536CF /* GoalStuff.swift */; };
-		2EF84590274F4153004536CF /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8458F274F4153004536CF /* Goals.swift */; };
 		C8EAA314274E1A5200278EC6 /* JournalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAA313274E1A5200278EC6 /* JournalData.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,9 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E07B81A2744D165004AA826 /* FeelingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsView.swift; sourceTree = "<group>"; };
 		2E4BE6AC274BA0E0003ECCB3 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		2E88B8CA274E3C3C00952C1C /* StatisticsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsData.swift; sourceTree = "<group>"; };
+		2E88B8CC274F44C500952C1C /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		2E88B8CE274F451000952C1C /* GoalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalData.swift; sourceTree = "<group>"; };
 		2E8B0A08274747A200129B11 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		2E8B0A0A2748FA9400129B11 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
 		2EA0AFFC27420D5E0026B8D3 /* Fiducia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fiducia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,8 +71,6 @@
 		2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailedStepsView.swift; sourceTree = "<group>"; };
 		2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSummarisedStepsView.swift; sourceTree = "<group>"; };
 		2EBF0A4927462B8C0073007D /* TasksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksData.swift; sourceTree = "<group>"; };
-		2EF8458D274F4145004536CF /* GoalStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStuff.swift; sourceTree = "<group>"; };
-		2EF8458F274F4153004536CF /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
 		C8EAA313274E1A5200278EC6 /* JournalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,15 +129,14 @@
 				2E88B8CA274E3C3C00952C1C /* StatisticsData.swift */,
 				2EA0B0292742120B0026B8D3 /* TasksView.swift */,
 				2EA0B0312742155E0026B8D3 /* TaskDetailedStepsView.swift */,
-				2EF8458D274F4145004536CF /* GoalStuff.swift */,
-				2EF8458F274F4153004536CF /* Goals.swift */,
 				2EA0B03327422C630026B8D3 /* TaskSummarisedStepsView.swift */,
 				2E4BE6AC274BA0E0003ECCB3 /* NewTaskView.swift */,
 				2EA0B02F274214A20026B8D3 /* Task.swift */,
 				2EBF0A4927462B8C0073007D /* TasksData.swift */,
 				2EA0B02D2742124C0026B8D3 /* ReflectionView.swift */,
 				C8EAA313274E1A5200278EC6 /* JournalData.swift */,
-				2E07B81A2744D165004AA826 /* FeelingsView.swift */,
+				2E88B8CC274F44C500952C1C /* Goal.swift */,
+				2E88B8CE274F451000952C1C /* GoalData.swift */,
 				2E8B0A08274747A200129B11 /* Journal.swift */,
 				2EA0B00327420D610026B8D3 /* Assets.xcassets */,
 				2EA0B00527420D610026B8D3 /* Preview Content */,
@@ -302,15 +299,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E07B81B2744D165004AA826 /* FeelingsView.swift in Sources */,
 				C8EAA314274E1A5200278EC6 /* JournalData.swift in Sources */,
 				2EA0B00227420D5E0026B8D3 /* ContentView.swift in Sources */,
 				2E88B8CB274E3C3C00952C1C /* StatisticsData.swift in Sources */,
 				2EBF0A4A27462B8C0073007D /* TasksData.swift in Sources */,
-				2EF84590274F4153004536CF /* Goals.swift in Sources */,
-				2EF8458E274F4145004536CF /* GoalStuff.swift in Sources */,
 				2EA0B0322742155E0026B8D3 /* TaskDetailedStepsView.swift in Sources */,
 				2EA0B02E2742124C0026B8D3 /* ReflectionView.swift in Sources */,
+				2E88B8CF274F451000952C1C /* GoalData.swift in Sources */,
 				2EA0B02C2742121B0026B8D3 /* ProgressTabView.swift in Sources */,
 				2E8B0A0B2748FA9400129B11 /* Statistic.swift in Sources */,
 				2EA0B02A2742120B0026B8D3 /* TasksView.swift in Sources */,
@@ -318,6 +313,7 @@
 				2E8B0A09274747A200129B11 /* Journal.swift in Sources */,
 				2EA0B030274214A20026B8D3 /* Task.swift in Sources */,
 				2EA0B00027420D5E0026B8D3 /* FiduciaApp.swift in Sources */,
+				2E88B8CD274F44C500952C1C /* Goal.swift in Sources */,
 				2EA0B03427422C630026B8D3 /* TaskSummarisedStepsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
