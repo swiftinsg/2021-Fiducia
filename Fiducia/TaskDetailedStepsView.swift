@@ -11,7 +11,7 @@ struct NextButtonStyle: ButtonStyle {
         configuration.label
             .padding()
             .font(.system(size: 25))
-            .background(Color.gray.opacity(0.3))
+            .background(Color.lightGrey)
             .foregroundColor(.black)
             .cornerRadius(15)
             .scaleEffect(configuration.isPressed ? 1.1 : 1.0)
