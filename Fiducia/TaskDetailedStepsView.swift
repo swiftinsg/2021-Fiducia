@@ -136,7 +136,7 @@ struct TaskDetailedStepsView: View {
                         
                 
                 } else {
-                    Text("Good job!")
+                    Text("Good job!🎉")
                         .font(.system(size: 40))
                         .font(.headline)
                     Button(action: {
