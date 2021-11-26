@@ -131,7 +131,7 @@ struct ReflectionView: View {
                     HStack {
                         VStack {
                             Spacer()
-                            Text("How am I feeling today?🧐")
+                            Text("How am I feeling today 🧐")
                                 .font(.title2)
                                 .padding()
                         }
