@@ -11,7 +11,7 @@ struct NextButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding()
-            .font(.system(size: 25))
+            .font(.system(size: 20))
             .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
             .background(colorScheme == .dark ? Color.darkGrey : Color.lightGrey)
             .cornerRadius(15)
@@ -35,40 +35,7 @@ struct TaskDetailedStepsView: View {
             
         VStack {
                 
-            HStack {
-                    
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                    
-                }, label: {
-                    HStack {
-                        Image(systemName: "chevron.backward")
-                            .font(.system(size: 18, weight: .medium))
-                        Text("Tasks")
-                            .font(.system(size: 20))
-                        
-                    }
-                    
-                })
-                    
-                Spacer()
-                    .frame(maxWidth: .infinity)
-                    
-                Button(action: {
-                    self.showSheet.toggle()
-                    
-                }) {
-                    Image(systemName: "list.bullet.rectangle")
-                        .font(.system(size: 20))
-                    
-                }.sheet(isPresented: $showSheet) {
-                    TaskSummarisedStepsView(task: $task, tasksData: tasksData)
-                    
-                }
-                
-            }
-            .padding(.trailing)
-            .padding(.leading)
+
             HStack {
                 Text(task.name)
                     .font(.system(size: 25))
@@ -78,6 +45,7 @@ struct TaskDetailedStepsView: View {
                 Spacer()
                 
             }
+            .padding()
                 
             if task.steps.count >= 1 {
                 ProgressView(value: Double(stepCount), total: Double(task.steps.count))
@@ -191,6 +159,19 @@ struct TaskDetailedStepsView: View {
             }
             Spacer()
             
+        }
+        .toolbar {
+            Button(action: {
+                self.showSheet.toggle()
+                
+            }) {
+                Image(systemName: "list.bullet.rectangle")
+                    .font(.system(size: 20))
+                
+            }.sheet(isPresented: $showSheet) {
+                TaskSummarisedStepsView(task: $task, tasksData: tasksData)
+                
+            }
         }
         
     }

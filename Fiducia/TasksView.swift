@@ -33,7 +33,7 @@ struct TasksView: View {
                     if searchText.isEmpty {
                         ForEach($tasksData.tasks) { $task in
                             NavigationLink(destination:
-                                            TaskDetailedStepsView(task: $task, tasksData: tasksData).navigationBarBackButtonHidden(true).navigationBarHidden(true))
+                                            TaskDetailedStepsView(task: $task, tasksData: tasksData).navigationBarTitleDisplayMode(.inline))//.navigationBarBackButtonHidden(true).navigationBarHidden(true))
                             {
                                 HStack {
                                     Text(task.name)
@@ -129,7 +129,7 @@ struct TasksView: View {
             
         }
         .sheet(isPresented: $isSheetPresented) {
-            NewTaskView(tasksData: tasksData) // Changed this to pass the tasksData to the other view
+            NewTaskView(tasksData: tasksData)
         }
     }
 }
