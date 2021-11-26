@@ -33,7 +33,7 @@ struct TasksView: View {
                     if searchText.isEmpty {
                         ForEach($tasksData.tasks) { $task in
                             NavigationLink(destination:
-                                            TaskDetailedStepsView(task: $task, tasksData: tasksData).navigationBarTitleDisplayMode(.inline))//.navigationBarBackButtonHidden(true).navigationBarHidden(true))
+                                            TaskDetailedStepsView(task: $task, tasksData: tasksData).navigationBarTitleDisplayMode(.inline))
                             {
                                 HStack {
                                     Text(task.name)

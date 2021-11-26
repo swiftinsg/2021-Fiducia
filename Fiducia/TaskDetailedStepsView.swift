@@ -42,10 +42,10 @@ struct TaskDetailedStepsView: View {
                     .font(.headline)
                     .bold()
                     .padding()
-                Spacer()
                 
             }
-            .padding()
+            .padding(.leading)
+            .padding(.trailing)
                 
             if task.steps.count >= 1 {
                 ProgressView(value: Double(stepCount), total: Double(task.steps.count))
