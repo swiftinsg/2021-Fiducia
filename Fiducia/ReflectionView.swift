@@ -17,7 +17,12 @@ struct FeelingButtonStyle: ButtonStyle {
     
 }
 
-
+extension View {
+    func hideKeyboard() {
+        let resign = #selector(UIResponder.resignFirstResponder)
+        UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
+    }
+}
 
 struct ReflectionView: View {
     
@@ -50,6 +55,7 @@ struct ReflectionView: View {
     @State private var dateSelect = Date()
     
     var body: some View {
+        
         NavigationView {
             ScrollView {
                 
@@ -97,6 +103,9 @@ struct ReflectionView: View {
                             .padding(.bottom, 10)
                             .onAppear() {
                                 UITextView.appearance().backgroundColor = .clear
+                            }
+                            .onTapGesture {
+                                hideKeyboard()
                             }
                             .onChange(of: goalsData.goals[0].goalInputString) { _ in
                                 if goalsData.goals[0].goalInputString.count > 200 {
@@ -236,6 +245,9 @@ struct ReflectionView: View {
                         TextEditor(text: $filteredJournals[0].journalInput)
                             .padding(30)
                             .background(Color.clear)
+                            .onTapGesture {
+                                hideKeyboard()
+                            }
                             .onAppear() {
                                 UITextView.appearance().backgroundColor = .clear
                             }
@@ -273,6 +285,18 @@ struct ReflectionView: View {
             .alert("Your input was successfully saved!", isPresented: $saveAlert, actions: {})
             .navigationTitle("Reflection")
             
+        }
+        .onAppear {
+            changeCheck = journalData.journals.filter { journal in
+                journal.date.contains(dateString)
+            }
+            if changeCheck.isEmpty {
+                filteredJournals = [Journal(date: "", journalInput: "", feelingsInput: 0)]
+                feeling = 0
+            } else {
+                filteredJournals = changeCheck
+                feeling = filteredJournals[0].feelingsInput
+            }
         }
         .onChange(of: dateSelect) { _ in
             changeCheck = journalData.journals.filter { journal in

@@ -47,6 +47,9 @@ struct TaskSummarisedStepsView: View {
                             }
                             .tint(.red)
                         }
+                        .onTapGesture {
+                            hideKeyboard()
+                        }
                 }
                 
                 Button(action: {
