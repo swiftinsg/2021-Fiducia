@@ -26,10 +26,15 @@ struct TasksView: View {
     @State var showSheet = false
     
     @State var isSheetPresented = false
+    
     var body: some View {
+        
         NavigationView {
+            
             ScrollView {
+                
                 LazyVStack {
+                    
                     if searchText.isEmpty {
                         ForEach($tasksData.tasks) { $task in
                             NavigationLink(destination:
@@ -66,7 +71,6 @@ struct TasksView: View {
                                 .sheet(isPresented: $showSheet) {
                                     TaskSummarisedStepsView(task: $task, tasksData: tasksData)
                                 }
-                                
                                 
                             }
                             

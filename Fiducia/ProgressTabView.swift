@@ -4,7 +4,7 @@
 //
 //  Created by sap on 15/11/21.
 //
-/*
+
 import SwiftUI
 
 struct ProgressTabView: View {
@@ -21,4 +21,4 @@ struct ProgressTabView_Previews: PreviewProvider {
         ProgressTabView(statisticsData: StatisticsData())
     }
 }
-*/
+

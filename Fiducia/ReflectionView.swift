@@ -104,9 +104,6 @@ struct ReflectionView: View {
                             .onAppear() {
                                 UITextView.appearance().backgroundColor = .clear
                             }
-                            .onTapGesture {
-                                hideKeyboard()
-                            }
                             .onChange(of: goalsData.goals[0].goalInputString) { _ in
                                 if goalsData.goals[0].goalInputString.count > 200 {
                                     let limit = String(goalsData.goals[0].goalInputString.prefix(200))
@@ -245,9 +242,6 @@ struct ReflectionView: View {
                         TextEditor(text: $filteredJournals[0].journalInput)
                             .padding(30)
                             .background(Color.clear)
-                            .onTapGesture {
-                                hideKeyboard()
-                            }
                             .onAppear() {
                                 UITextView.appearance().backgroundColor = .clear
                             }
@@ -257,6 +251,7 @@ struct ReflectionView: View {
                     .padding(.trailing)
                     .padding(.bottom)
                     Button("Save") {
+                        hideKeyboard()
                         self.saveAlert.toggle()
                         saveCheck = journalData.journals.filter { journal in
                             journal.date.contains(dateString)
@@ -280,10 +275,14 @@ struct ReflectionView: View {
                     .cornerRadius(15)
                     
                 }
+                .onTapGesture {
+                    hideKeyboard()
+                }
                 
             }
             .alert("Your input was successfully saved!", isPresented: $saveAlert, actions: {})
             .navigationTitle("Reflection")
+            
             
         }
         .onAppear {
